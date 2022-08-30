@@ -44,24 +44,26 @@ const pokemonName = [];
 
 // 단일 카드 내부 div
 // 카드 이미지 부분
-function pokemonApiImport(Keys, count){
+function pokemonApiImport(Keys, count, pokemonName){
   const _BASIC_URL = `https://pokeapi.co/api/v2/${Keys}?limit=${count}/`;
   const request = new XMLHttpRequest();
-    request.open("GET", _BASIC_URL);
-    request.responseType = "json";
-    request.send();
-    request.addEventListener('load', () => {
+  request.open("GET", _BASIC_URL);
+  request.responseType = "json";
+  request.send();
+  request.addEventListener('load', () => {
     const _POKEMON_API = request.response;
     // console.log(_POKEMON_API);
-    console.log(_POKEMON_API.results[0].name)
+    // console.log(_POKEMON_API.results[0].name)
     // console.log(_POKEMON_API.results);
     for(let i = 0; i< count; i++){
-      let pokemonData = _POKEMON_API.results[i].name
-      
+      pokemonName[i] = _POKEMON_API.results[i].name
     }
+    console.log(pokemonName)
   })
 }
-pokemonApiImport(pokemonApiList.pokemon, 898)
+pokemonApiImport(pokemonApiList.pokemon, 898, pokemonName)
+console.log(pokemonName)
+
 
 
 // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
