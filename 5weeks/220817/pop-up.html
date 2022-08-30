@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #pop-up {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pop-up > div:nth-child(1) {
+      width: 40vw;
+      height: 60vh;
+      background-color: rgba(215, 215, 215, 0.5);
+      backdrop-filter: blur(11px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px;
+      position: fixed;
+
+    }
+
+    h1 {
+      width: 20vw;
+      height: 5vh;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    p {
+      width: 30vw;
+      height: 10vh;
+      font-size: 14px;
+      line-height: 13px;
+      text-align: left;
+      position: relative;
+      top: 3vh;
+    }
+
+    button {
+      background-color: grey;
+      width: 25vw;
+      height: 5vh;
+      font-size: 24px;
+      position: relative;
+      top: 10vh;
+    }
+
+    .circle {
+      width: 20vw;
+      height: 20vh;
+      background-color: grey;
+      border-radius: 100%;
+      position: absolute;
+      bottom: 50vh;
+      left: 60vw;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <div id="pop-up">
+    <div>
+      <h1>HELLO</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus illum quod ad aut est repellat, quam explicabo, doloribus quisquam odit laboriosam iure ea! Deleniti suscipit dolore vitae fugiat est vel?</p>
+      <button>close</button>
+    </div>
+    <div class="circle"></div>
+  </div>
+
+  <script>
+    let popUp = document.getElementById('pop-up');
+    console.log(popUp)
+    let closeButton = document.getElementsByTagName("button");
+    console.log(closeButton)
+    closeButton[0].addEventListener('click', function () {
+        popUp.style.display = 'none';
+    })
+  </script>
+</body>
+</html>

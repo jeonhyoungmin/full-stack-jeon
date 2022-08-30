@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav {
+    width: 60vw;
+    height: 60vh;
+    position: absolute;
+    border: 5px solid black;
+    z-index: 2;
+  }
+  body > div {
+    width: 95vw;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+  body > div > div {
+    width: 30vw;
+    height: inherit;
+  }
+  body > div > div:nth-child(1) > div {
+    width: inherit;
+    height: 14vh;
+    background-color: pink;
+    position: absolute;
+    top: 11vh;
+  }
+  body > div > div:nth-child(2) > div:nth-child(1) {
+    width: inherit;
+    height: 10vh;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position:absolute;
+    right: 25vw;
+    top: 16vh;
+  }
+  body > div > div:nth-child(2) > div:nth-child(1) > div {
+    width: 5vw;
+    height: 6vh;
+    background-color: white;
+    margin: 10px;
+  }
+  body > div > div:nth-child(2) > div:nth-child(2) {
+    width: inherit;
+    height:80vh;
+    background-color: red;
+  }
+  body > div > div:nth-child(2) > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body > div > div:nth-child(3) {
+    display: flex;
+    align-items: flex-end;
+  }
+  body > div > div:nth-child(3) > div{
+    width: inherit;
+    height: 14vh;
+    background-color: yellow;
+
+    position: absolute;
+    top: 77vh;
+  }
+
+  </style>
+
+</head>
+<body>
+  <nav></nav>
+  <div> <!-- 중앙 3박스 -->
+    <div>
+      <div></div>
+    </div>
+    <div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div><sapn>Hello
+        <br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ipsum modi odit quos possimus ut, quas non, laborum voluptate, nemo dolorem quidem architecto aperiam accusantium illum ea a dolor ex.</span>
+      </div>
+    </div>
+    <div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

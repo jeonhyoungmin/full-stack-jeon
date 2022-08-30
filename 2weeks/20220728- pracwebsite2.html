@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    ul {margin: 0; padding: 0; list-style-type: none;}
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: auto;
+      background: linear-gradient(.25turn, #1c2003, #ebf8e1, #dd7119);;
+    }
+    body > div {
+      width: 80vw;
+      height: 5000px;
+    }
+
+
+
+    /* menu style*/
+    body > div > header {
+      width: 80vw;
+      height: 70px;
+      position: fixed;
+    }
+    body > div > header > nav {
+      width: 80vw;
+      height: 70px;
+    }
+    body > div > header > nav > div > ul {
+      width: 70vw;
+      height: 70px;
+    }
+    li {
+      width: 10vw;
+      height: 70px;
+    }
+    a {
+      color:aliceblue;
+      text-decoration-line: none;
+    }
+    a:hover {
+      color: darkcyan
+    }
+    /* li:hover {
+      background:
+      radial-gradient(circle at 50% 0,
+        rgba(255,0,0,.5),
+        rgba(255,0,0,0) 70.71%),
+      radial-gradient(circle at 6.7% 75%,
+        rgba(0,0,255,.5),
+        rgba(0,0,255,0) 70.71%),
+      radial-gradient(circle at 93.3% 75%,
+        rgba(0,255,0,.5),
+        rgba(0,255,0,0) 70.71%) beige;
+      border-radius: 50%;
+    } */
+
+
+    /* main style */
+    main {
+      width: 80vw;
+      height: 90vh;
+    }
+    .box-1 {
+      width: 80vw;
+      height: 90vh;
+    }
+    .box-1-image {
+      width: 80vw;
+      height: 90vh;
+    }
+
+
+    /* 정렬 및 자주 쓰이는 style */
+    .dp-flex {display: flex;}
+    .jc-center {justify-content: center;}
+    .jc-space-between {justify-content: space-between;}
+    .ai-center {align-items: center;}
+
+
+    /* .bd-test {border: 1px solid red;} */
+  </style>
+</head>
+<body>
+  <div class="bd-test">
+    <header class="bd-test"> <!-- 메뉴 -->
+      <nav class="dp-flex jc-center">
+        <div> <!-- 중앙 배치를 위한 div -->
+          <ul class="dp-flex ai-center jc-center jc-space-between">
+            <li class="dp-flex ai-center jc-center"><a href="https://astro.kasi.re.kr/learning/pageView/5127">태양</a></li>
+            <li class="dp-flex ai-center jc-center"><a href="https://astro.kasi.re.kr/learning/pageView/5203">은하</a></li>
+            <li class="dp-flex ai-center jc-center"><a href="">초신성</a></li>
+            <li class="dp-flex ai-center jc-center"><a href="">성운</a></li>
+            <li class="dp-flex ai-center jc-center"><a href="">우주 에너지</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+
+
+    <main class="bd-test" style="margin-top: 70px;">
+      <div class="box-1 dp-flex ai-center jc-center">
+        <a href="https://astro.kasi.re.kr/learning/pageView/5127"><img src="/image/sun.jpg" class="box-1-image" alt="태양"/></a>
+      </div>
+      <div>
+        <a href="https://astro.kasi.re.kr/learning/pageView/5203"><img/></a>
+      </div>
+
+
+
+
+
+
+      <div></div>
+    </main>
+
+
+
+
+
+    <section></section>
+  </div>
+</body>
+</html>

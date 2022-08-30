@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {box-sizing: border-box}
+
+    main {
+      width: 50vw;
+      height: 50vh;
+      border: 2px solid black;
+    }
+
+    main > section {
+      width: 10vw;
+      height: 10vh;
+      border: 2px solid red;
+    }
+
+    main > div {
+      width: 10vw;
+      height: 10vh;
+      border: 2px solid blue;
+    }
+
+    main > article {
+      width: 10vw;
+      height: 10vh;
+      border: 2px solid pink;
+    }
+
+    main > aside {
+      width: 10vw;
+      height: 10vh;
+      border: 2px solid rgb(3, 176, 245);
+    }
+
+    main > p {
+      width: 10vw;
+      height: 10vh;
+      border: 2px solid purple;
+    }
+
+    /* flex */
+    .dp-flex {display:flex;}
+    
+    /* flex-wrap 줄바꿈*/
+    .fw-nowrap {flex-wrap: nowrap;}
+    .fw-wrap {flex-wrap: wrap;}
+    .fw-wrap-reverse {flex-wrap: wrap-reverse;}
+
+    /* flex-direction 정렬 방향*/
+    .fd-row {flex-direction: row;}
+    .fd-row-reverse {flex-direction: row-reverse;}
+    .fd-column {flex-direction: column;}
+    .fd-column-reverse {flex-direction: column-reverse;}
+
+    /* justify-content 수평 방향*/
+    .jc-center {justify-content: center;}
+    .jc-right {justify-content: right;}
+    .jc-left {justify-content: left;}
+    .jc-flex-start {justify-content: flex-start;}
+    .jc-flex-end {justify-content: flex-end;}
+    .jc-space-between {justify-content: space-between;}
+    .jc-space-around {justify-content: space-around;}
+
+    /* align-items 수직 방향*/
+    .ai-center {align-items: center;}
+    .ai-flex-start {align-items: flex-start;}
+    .ai-flex-end {align-items: flex-end;}
+    .ai-stretch {align-items: stretch;}
+    .ai-baseline {align-items: baseline;}
+
+    /* 자식 요소가 여러 줄 일때 수직 방향 맞춤 */
+    .ac-stretch {align-content: stretch;}
+    .ac-flex-start {align-content: flex-start;}
+    .ac-flex-end {align-content: flex-end;}
+    .ac-center {align-content: center;}
+    .ac-space-between {align-content: space-between;}
+    .ac-space-around {align-content: space-around;}
+
+
+    /* grid */
+    .dp-grid {display: grid;}
+    .gt-columns-100 {grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));}
+    .gt-rows-150 {grid-template-rows: repeat(auto-fit, minmax(240px 240px 240px 240px 240px, 1fr))}
+    .gap-10 {gap: 10px;}
+  </style>
+</head>
+<body>
+  <main class="dp-grid gt-columns-100 gt-rows-150 gap-10">
+    <section>1</section>
+    <div>2</div>
+    <article>3</article>
+    <aside>4</aside>
+    <aside>5</aside>
+  </main>
+</body>
+</html>

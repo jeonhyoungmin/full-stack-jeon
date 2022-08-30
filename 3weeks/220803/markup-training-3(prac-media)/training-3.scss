@@ -1,0 +1,94 @@
+$bd-test: 1px solid pink;
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin flex-setting($justify, $align, $direction:row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body > div {
+  @include size(100vw, 100vh);
+  background-image: url("https://m1.daumcdn.net/cfile176/image/99B382425D105DE608474D");
+  background-size: 100vw 100vh;
+
+  & > header {
+    @include size(100vw, 50vh);
+    & > div {
+      @include size(100vw, 5vh);
+      background-color: rgba(29, 29, 29, 0.6);
+    }
+    & > hr {
+      border: 1px solid black;
+    }
+    & > nav {
+      @include size(50vw, 30vh);
+      background-color:rgba(31, 31, 31, 0.507);
+      position: absolute;
+      bottom: 70vh;
+      left: 45vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      & > div {
+        @include size(inherit, 4vh);
+        display: flex;
+        justify-content: center;
+        font-size: 10px;
+        color: white;
+      }
+      & > div:nth-child(1) {
+        @include size(inherit, 6vh);
+        font-size: 20px;
+      }
+    }
+
+  }
+  & > main {
+    @include size(100vw, 50vh);
+
+    & > div {
+      @include size(40vw, 25vh);
+      position: relative;
+      left: 5vw;
+      & > div:nth-child(1) {
+        font-size: 130px;
+        color: rgb(228, 135, 135);
+        position: absolute;
+        bottom: 13vh;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
+      & > div:nth-child(2) {
+        font-size: 130px;
+        color: rgb(120, 247, 120);
+        position: absolute;
+        bottom: 1vh;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+    & > aside {
+      @include size(63vw, 5vh);
+      margin-top: 1vh;
+      position: relative;
+      left: 6vw;
+      bottom: 2vh;
+      color: white;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
+}

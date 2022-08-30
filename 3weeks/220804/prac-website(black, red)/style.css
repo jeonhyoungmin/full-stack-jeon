@@ -1,0 +1,216 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body > div:nth-child(1) {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: black;
+}
+body > div:nth-child(1) > div:nth-child(1) {
+  width: 10vw;
+  height: 250vh;
+  border: 5px solid red;
+  background-color: black;
+  transform: rotate(70deg);
+}
+body > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 110vw;
+  right: 2vh;
+}
+body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 75vw;
+  right: 2vh;
+}
+body > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 30vw;
+  right: 2vh;
+}
+body > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  position: relative;
+  top: -5vw;
+  right: 2vh;
+}
+body > div:nth-child(1) > div:nth-child(1):hover {
+  border: 5px solid rgb(255, 238, 0);
+}
+body > div:nth-child(1) > div:nth-child(2) {
+  width: 10vw;
+  height: 250vh;
+  border: 5px solid red;
+  background-color: black;
+  transform: rotate(-80deg);
+}
+body > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  position: relative;
+  top: 5vw;
+  right: -2vh;
+}
+body > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  position: relative;
+  top: 85vw;
+  right: -2vh;
+}
+body > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  position: relative;
+  top: 50vw;
+  right: -2vh;
+}
+body > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  position: relative;
+  top: 15vw;
+  right: -2vh;
+}
+body > div:nth-child(1) > div:nth-child(2):hover {
+  border: 5px solid rgb(255, 238, 0);
+}
+
+body > div:nth-child(2) {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-image: url("https://cutewallpaper.org/27/black-with-red-wallpaper/black-and-red-laptop-wallpapers-top-free-black-and-red-laptop-backgrounds--wallpaperaccess.png");
+  background-size: cover;
+}
+body > div:nth-child(2) > div {
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  flex-direction: column;
+}
+body > div:nth-child(2) > div > div:nth-child(1) {
+  width: 20vw;
+  height: 20vh;
+  color: black;
+  font-size: 150px;
+  text-shadow: 2px 2px 3px red;
+}
+body > div:nth-child(2) > div > div:nth-child(2) {
+  color: black;
+  font-size: 50px;
+  text-shadow: 2px 2px 3px yellow;
+}
+body > div:nth-child(2) > div > div:nth-child(3) {
+  color: black;
+  font-size: 150px;
+  text-shadow: 2px 2px 3px red;
+}
+
+body > div:nth-child(3) {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  background-image: url("https://cdn.wallpapersafari.com/44/48/UQhjd8.jpg");
+  background-size: 100vw 100vh;
+}
+body > div:nth-child(3) > div {
+  color: black;
+  font-size: 150px;
+  text-shadow: 2px 2px 3px red;
+}
+body > div:nth-child(3) > a {
+  color: black;
+  font-size: 50px;
+  text-shadow: 2px 2px 3px yellow;
+  text-decoration: none;
+}
+
+body > div:nth-child(4) {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  overflow: hidden;
+  background-image: url("https://data.1freewallpapers.com/download/counter-strike-global-offensive-4k-1440x900.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  flex-direction: column;
+}
+body > div:nth-child(4) > div:nth-child(1) {
+  color: red;
+  position: relative;
+  font-size: 100px;
+  text-shadow: -3px -3px 10px red;
+}
+body > div:nth-child(4) > div:nth-child(2) {
+  color: red;
+  position: relative;
+  font-size: 100px;
+  text-shadow: -3px -3px 10px red;
+}
+
+body > div:nth-child(5) {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(rgb(151, 151, 0) 10%, rgb(173, 0, 0) 30%, black 60%);
+}
+body > div:nth-child(5) > div {
+  width: 15vw;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+body > div:nth-child(5) > div > a {
+  width: inherit;
+  height: inherit;
+  opacity: 0; /* . 감추기 */
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,45 @@
+@mixin flex-setting($jc, $ai, $fd:row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+#root {
+  @include size(45vw, 45vh);
+  background-color: grey;
+  & > div {
+    @include size(10vw, 10vh);
+    background-color: black;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    @include flex-setting(center, center, column);
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #root {
+    @include size(25vw, 25vh);
+    @include flex-setting(space-around,flex-start);
+    flex-wrap: wrap;
+    & > div {
+      margin-top: 1vh;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  #root {
+    @include flex-setting(center, center);
+    justify-content: space-around;
+  }
+}

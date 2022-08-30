@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>피카츄</li>
+    <li>라이츄</li>
+    <li>파이리</li>
+    <li>꼬부기</li>
+    <li>버터풀</li>
+    <li>야도란</li>
+  </ul>
+
+  <script>
+    // console.dir(window.document.querySelector);
+
+    // let monster = document.getElementsByTagName("ul > li:nth-child(4)");
+    // console.log(monster);
+
+
+    // console.dir(window.document.body.children[0].children[3].innerHTML);
+    //조회
+
+    let monster = window.document.body.children[0].children;
+
+    console.log(monster);
+
+    for(let i = 0; i < monster.length; i++) {
+      if(monster[i].innerHTML === "꼬부기") {
+        console.log(monster[i].innerHTML);
+      }
+    }
+
+    for(let i = 0; i < monster.length; i++) {
+        if(monster[i].innerHTML === "파이리") {
+          monster[i].innerHTML = "리자몽"
+          console.log(monster[i].innerHTML);
+        }
+        console.log(monster[i].innerHTML);
+      }
+
+  </script>
+</body>
+</html>
+<!-- [develop] algorithm -3 | 문서에 있는 데이터 추출하기
+공욱재
+
+Q. <ul> 태그의 자식으로 여러개의 포켓몬 이름이 들어있는 <li> 태그가 나열되어있다. javascript를 도구로 "꼬부기" 라는 이름을 문서에서 찾아 console에 출력하세요!
+
+doc-console.html
+HTML
+수업 댓글 -->

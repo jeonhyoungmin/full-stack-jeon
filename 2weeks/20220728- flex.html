@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {box-sizing: border-box;}
+
+    .bd-test {border: 1px solid black;}
+
+    body > div > div {
+      width: 500px;
+      height: 500px;
+    }
+
+    body > div > div > div {
+      width: 400px;
+      height: 400px;
+    }
+
+    body > div > div > div > div {
+      width: 400px;
+      height: 400px;
+    }
+
+    body > div > div > div > div > div {
+      width: 180px;
+      height: 360px;
+    }
+
+    body > div > div > div > div > div > div {
+      width: 180px;
+      height: 360px;
+    }
+
+    body > div > div > div > div > div > div > div {
+      width: 150px;
+      height: 100px;
+    }
+
+    .dp-flex {display: flex;}
+    .jc-center {justify-content: center;}
+    .ai-center {align-items: center;}
+    .fd-column {flex-direction: column;}
+    .fd-row-reverse {flex-direction: row-reverse;}
+    .fd-column-reverse {flex-direction: column-reverse;}
+    .fd-row {flex-direction: row;}
+    .jc-space-around {justify-content: space-around;}
+    .jc-space-between {justify-content: space-between;}
+    .ai-space-around {align-items: space-around;}
+    .ac-space-around {align-content: space-around;}
+    .dp-grid {display: grid}
+  
+
+  </style>
+</head>
+<body>
+  <div>
+    <div class="bd-test dp-flex jc-center ai-center"> <!-- box-1 -->
+      <div class="bd-test"> 
+        <div class="dp-flex fd-row jc-space-around jc-center ai-center fd-column-reverse"> <!-- 안쪽 박스의 보이지 않는 컨테이너 -->
+          <div class="" style="background-color: grey;"></div>
+          <div class="">
+            <div class="dp-flex fd-column jc-space-between ai-center"> <!-- 세칸 짜리 박스의 보이지 않는 컨테이너 박스 -->
+              <div class="" style="background-color: grey;"></div>
+              <div class="" style="background-color: grey;"></div>
+              <div class="" style="background-color: grey;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+$main-color-1: black;
+$main-color-2: red;
+$color-1: yellow;
+
+@mixin flex-setting($jc, $ai, $overflow:hidden) {
+  display:flex;
+  justify-content: $jc;
+  align-items: $ai;
+  overflow: $overflow;
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;  
+}
+@mixin warning1($top, $right) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  position: relative;
+  top: $top;
+  right: $right;
+}
+@mixin warning2($top, $right) {
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  position: relative;
+  top: $top;
+  right: $right;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body > div:nth-child(1) {
+  @include size(100vw, 100vh);
+  @include flex-setting(center, center, hidden);
+  background-color: $main-color-1;
+  & > div:nth-child(1) {
+    @include size(10vw, 250vh);
+    border: 5px solid $main-color-2;
+    background-color: $main-color-1;
+    transform: rotate(70deg);
+    & > div:nth-child(1) {
+      @include warning1(110vw, 2vh);
+    }
+    & > div:nth-child(2) {
+      @include warning1(75vw, 2vh);
+    }
+    & > div:nth-child(3) {
+      @include warning1(30vw, 2vh);
+    }
+    & > div:nth-child(4) {
+      @include warning1(-5vw, 2vh);
+    }
+  }
+  & > div:nth-child(1):hover {
+    border: 5px solid rgb(255, 238, 0);
+  }
+
+
+  & > div:nth-child(2) {
+    @include size(10vw, 250vh);
+    border: 5px solid $main-color-2;
+    background-color: $main-color-1;
+    transform: rotate(-80deg);
+    & > div:nth-child(1) {
+      @include warning2(5vw, -2vh);
+    }
+    & > div:nth-child(2) {
+      @include warning2(85vw, -2vh);
+    }
+    & > div:nth-child(3) {
+      @include warning2(50vw, -2vh);
+    }
+    & > div:nth-child(4) {
+      @include warning2(15vw, -2vh);
+    }
+  }
+  & > div:nth-child(2):hover {
+    border: 5px solid rgb(255, 238, 0);
+  }
+}
+
+body > div:nth-child(2) {
+  @include size(100vw, 100vh);
+  @include flex-setting(center, center);
+  background-image: url("https://cutewallpaper.org/27/black-with-red-wallpaper/black-and-red-laptop-wallpapers-top-free-black-and-red-laptop-backgrounds--wallpaperaccess.png");
+  background-size: cover;
+  & > div {
+    @include size(50vw, 50vh);
+    @include flex-setting(center, flex-start  );
+    flex-direction: column;
+    & > div:nth-child(1) {
+      @include size(20vw, 20vh);
+      color: $main-color-1;
+      font-size: 150px;
+      text-shadow: 2px 2px 3px red;
+    }
+    & > div:nth-child(2) {
+      color: $main-color-1;
+      font-size: 50px;
+      text-shadow: 2px 2px 3px yellow;
+    }
+    & > div:nth-child(3) {
+      color: $main-color-1;
+      font-size: 150px;
+      text-shadow: 2px 2px 3px red;
+    }
+  }
+}
+
+body > div:nth-child(3) {
+  @include size(100vw, 100vh);
+  @include flex-setting(center, center);
+  flex-direction: column;
+  background-image: url("https://cdn.wallpapersafari.com/44/48/UQhjd8.jpg");
+  background-size: 100vw 100vh;
+  & > div {
+    color: $main-color-1;
+    font-size: 150px;
+    text-shadow: 2px 2px 3px red;
+  }
+  & > a {
+    color: $main-color-1;
+    font-size: 50px;
+    text-shadow: 2px 2px 3px yellow;
+    text-decoration: none;
+  }
+}
+
+body > div:nth-child(4) {
+  @include size(100vw, 100vh);
+  @include flex-setting(flex-end, flex-start);
+  background-image: url("https://data.1freewallpapers.com/download/counter-strike-global-offensive-4k-1440x900.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  flex-direction: column;
+  & > div:nth-child(1) {
+    color: $main-color-2;
+    position: relative;
+    font-size: 100px;
+    text-shadow: -3px -3px 10px red;
+  }
+  & > div:nth-child(2) {
+    color: $main-color-2;
+    position: relative;
+    font-size: 100px;
+    text-shadow: -3px -3px 10px red;
+  }
+}
+
+body > div:nth-child(5) {
+  @include size(100vw, 100vh);
+  @include flex-setting(center, center);
+  background: radial-gradient(rgb(151, 151, 0) 10%, rgb(173, 0, 0) 30%, black 60%);
+  & > div {
+    @include size(15vw,15vh);
+    @include flex-setting(center, center);
+    & > a {
+      @include size(inherit, inherit);
+      opacity: 0; /* . 감추기 */
+    }
+  }
+}

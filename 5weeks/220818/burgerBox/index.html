@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="firstBox"></div>
+    <div id="changeBox"></div>
+  </div>
+  <script>
+    function flexSetting(element, justifyContent, alignItems, flexDirection="row"){
+      element.style.display = "flex";
+      element.style.justifyContent = justifyContent;
+      element.style.alignItems = alignItems
+      element.style.flexDirection = flexDirection
+    }
+    // console.log(flexSetting);
+    // console.dir(flexSetting);
+    
+    function widthAndHeight(element, width, height){
+      element.style.width = width;
+      element.style.height = height;
+    }
+    // console.log(widthAndHeight)
+    
+    let root = document.getElementById('root');
+    let changeBox = document.getElementById('changeBox');
+    let firstBox = document.getElementById('firstBox');
+    let greyBox = document.createElement('div');
+    let lineBox = document.createElement('div');
+    let xBox = document.createElement('div');
+    
+    // console.log(greyBox)
+    // console.log(root, changeBox, firstBox);
+    widthAndHeight(root, "100vw", "100vh");
+    root.style.backgroundColor = 'salmon';
+    flexSetting(root, "flex-end", 'flex-start');
+    
+    
+    widthAndHeight(firstBox, "30vw", "40vh");
+    firstBox.style.backgroundColor = "#333";
+    firstBox.append(lineBox);
+    flexSetting(firstBox, "flex-end", 'flex-start');
+    widthAndHeight(lineBox, '5vw', '5vw');
+    // lineBox.style.backgroundColor = "red";
+    flexSetting(lineBox, 'space-around', 'flex-start', 'column');
+    for(let i =0; i<3; i++){
+      let lineOne = document.createElement('div');
+      lineBox.append(lineOne);
+      let line = lineBox.children[i];
+      console.log(line)
+      widthAndHeight(line, "3vw", "0.5vw");
+      line.style.backgroundColor = "grey";
+    }
+    let line = lineBox.children;
+    // console.log(line)
+    // console.log(lineBox.children)
+    // firstBox.style.position = "absolute";
+    widthAndHeight(changeBox, "30vw", "40vh");
+    changeBox.style.backgroundColor = "#333";
+    flexSetting(changeBox, 'flex-end', 'flex-start');
+    changeBox.append(greyBox)
+    // console.log(changeBox)
+    widthAndHeight(greyBox, "25vw", "40vh");
+    greyBox.style.backgroundColor = "grey";
+    greyBox.append(xBox);
+    flexSetting(greyBox, 'flex-end', 'flex-start');
+
+    widthAndHeight(xBox, '5vw', '5vw');
+    xBox.style.backgroundColor = 'red';
+    flexSetting(xBox, 'space-around', 'flex-start', 'column');
+    // console.log(xBox)
+    for(let i = 0; i<2; i++){
+      let lineX = document.createElement('div');
+      xBox.append(lineX);
+      widthAndHeight(lineX, "3vw", "0.5vw");
+      lineX.style.backgroundColor = 'grey';
+      // console.log(xBox)
+    }
+    let lineX = xBox.children;
+    console.log(lineX)
+    lineX[0].style.transform = 'rotate(120deg)'
+    lineX[0].style.position = 'relative'
+    lineX[0].style.top = '0.6vh'
+    lineX[1].style.transform = 'rotate(60deg)'
+    lineX[1].style.position = 'relative'
+    lineX[1].style.bottom = '0.7vh'
+  </script>
+</body>
+</html>

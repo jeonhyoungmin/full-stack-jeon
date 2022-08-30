@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* reset */
+    body {margin: 0; height: 0;}
+    ul {margin: 0; height: 0; list-style-type: none;}
+    body > div {
+      width: 100vw;
+      min-height: 100vh;
+    }
+
+    /* box shadow */
+    body > div > div {
+      margin: 90vw;
+      height: 80vh;
+      text-align: center;
+      box-shadow: 1px 1px 3px 1px #dadce0;
+    }
+
+    /* menu layout */
+    body > div > div > header > div {
+      width: 50vw;
+      
+    }
+
+    /* display */
+    .dp-flex {display: flex;}
+    .dp-block {display: block;}
+    .dp-inline-block {display: inline-block;}
+    .dp-inline {display: inline;}
+
+    /* 임의 박스 색 */
+    .bg-color-grey {
+      background-color: grey;
+    }
+    .bg-color-pink {
+      background-color: pink;
+    }
+    .bg-color-greenyellow {
+      background-color: greenyellow;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div>
+    <div>
+      <header>
+        <!-- nav 두개로 나눠서 메뉴 정렬 -->
+        <div class="bg-color-grey">
+          <nav>
+            <ul>
+              <li>menu</li>
+              <li>DSCVR</li>
+            </ul>
+          </nav>
+        </div>
+        <div class="bg-color-pink">
+          <nav>
+            <ul>
+              <li>pinterest.co.kr/discover</li>
+              <li></li>
+              <li>HOME</li>
+              <li>FEATURED</li>
+              <li>PLACE</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <aside></aside>
+        <aside></aside>
+          <section>
+            <aside></aside>
+            <aside></aside>
+            <aside></aside>
+          </section>
+      </main>
+      <footer></footer>
+    </div>
+  </div>
+</body>
+</html>

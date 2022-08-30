@@ -1,0 +1,225 @@
+$color-1: grey;
+$color-2: red;
+$color-3: blue;
+$color-4: yellow;
+$color-5: green;
+$color-6: salmon;
+$color-7: purple;
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+@media (min-width: 1200px) {
+  body > div {
+    @include size(100vw, 100vh);
+    background-color: $color-1;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    & > div:nth-child(1) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(2) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(3) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(4) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(5) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(6) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(7) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(8) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(9) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(10) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  body > div {
+    @include size(100vw, 100vh);
+    background-color: $color-1;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    & > div:nth-child(1) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(2) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(3) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(4) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(5) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(6) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(7) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(8) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(9) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(10) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width:1199px) {
+  body > div {
+    @include size(100vw, 100vh);
+    background-color: $color-1;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr ;
+    & > div:nth-child(1) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(2) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(3) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(4) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(5) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(6) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(7) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(8) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(9) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+    & > div:nth-child(10) {
+      @include size(20vw, 20vh);
+      background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125");
+      background-repeat: no-repeat;
+      background-size: 20vw 20vh;
+    }
+  }
+}
+

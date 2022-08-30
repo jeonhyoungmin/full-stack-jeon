@@ -1,0 +1,153 @@
+$bd-test: 1px solid pink;
+$nths: (1:4vw, 2:14vw, 3:24vw, 4:34vw, 5:44vw, 6:54vw, 7:64vw);
+
+
+@mixin flex-setting($justify, $align, $direction:row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Uchen', serif;}
+ul{list-style-type: none;}
+body > div {
+  @include size(100vw, 100vh);
+}
+
+body > div > main {
+  @include size(100vw, 80vh);
+  background-image: url("https://www.rappick.com/wp-content/uploads/2022/07/hip-hops-clout-era-revisiting-soundcloud-raps-antics-driven-phase-stereogum.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  & > div {
+    @include size(25vw, 30vh);
+    position: relative;
+    top: 30vh;
+    left: 15vw;
+    border-radius: 10px;
+    & > div:nth-child(1) {
+      color: red;
+      font-size: 50px;
+    }
+    & > div:nth-child(2) {
+      color: pink;
+    }
+    & > div:nth-child(3) {
+      color: rgb(248, 95, 197);
+      font-size: 10px;
+    }
+  }
+  & > header {
+    @include size(100vw, 15vh);
+    @include flex-setting(center, center, column);
+    & > div {
+      @include size(80vw, 10vh);
+      @include flex-setting(center, center);
+      justify-content: space-between;
+      border-bottom: 1px solid white;
+      & > div:nth-child(1) {
+      @include size(5vw, 3vh);
+        color: white;
+      }
+      & > div:nth-child(2) {
+      @include size(15vw, 7vh);
+        font-size: 60px;
+        color: white;
+        position: relative;
+        bottom: 2vh;
+      }
+      & > div:nth-child(3) {
+      @include size(7vw, 3vh);
+        color: white;
+        justify-self: flex-start;
+      }
+    }
+    & > nav {
+      @include size(50vw, 5vh);
+      @include flex-setting(center, center);
+      justify-content: space-around;
+      & > div {
+        @include size(5vw, 3vh);
+        color: white;
+      }
+    }
+  }
+}
+
+body > div > section {
+  margin-top: 10vh;
+  @include size(100vw, 100vh);
+  @include flex-setting(center, center);
+  flex-direction: column;
+  & > div:nth-child(1) {
+    @include size(70vw, 10vh);
+    display: flex;
+    align-items: flex-end;
+    & > div {
+      @include size(50vw, 6vh);
+      font-size: 40px;
+      position: relative;
+      bottom: 2vh;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
+  }
+  & > div:nth-child(2) {
+    @include size(70vw, 90vh);
+    @include flex-setting(center, center);
+    & > div:nth-child(2) {
+      @include size(10vw, inherit);
+      @include flex-setting(center, center);
+      & > div {
+        background-color: black;
+        width: 0.1vw;
+        height: 70vh;
+      }
+    }
+    & > div:nth-child(1), div:nth-child(3) {
+      @include size(30vw, inherit);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      & > div {
+        @include size(inherit, 40vh);
+      }
+    }
+  }
+}
+
+body > div > footer {
+  margin-top: 25vh;
+  margin-bottom: 10vh;
+  @include size(100vw, 70vh);
+  @include flex-setting(center, center);
+  & > div {
+    @include size(80vw, 70vh);
+    background-color: red;
+  }}
+  
+  body>div>aside {
+    @include size(100vw, 100vh);
+    background-color: burlywood;
+    &>div:nth-child(1) {
+      @include size(100vw, 50vh);
+      background-color: aquamarine;
+      @include flex-setting(center, center);
+      @each $nth, $width in $nths {
+        &>div:nth-child(#{$nth}) {
+          position: absolute;
+          left: $width;
+          background-color: blue;
+          @include size(30vw, 45vh);
+          z-index: 1;
+        }
+      }
+    }
+  }

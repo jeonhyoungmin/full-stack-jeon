@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+
+  <script>
+    console.dir(window.document.body.children[0].children[0]);
+
+    let root = document.getElementById("root");
+    let section = document.getElementsByTagName("section");
+    console.log(section);
+    console.log(root);
+    console.dir(root);
+    console.log(typeof (root));
+    console.log(typeof (section));
+
+    for(let i = 0; i < section.length; i++) {
+      setInterval(() => {
+        section[i].style.width=100+"px";
+        section[i].style.height=100+"px";
+        section[i].style.backgroundColor="salmon";
+        root.style.display = "flex";
+      }, 1000);
+    }
+
+  </script>
+</body>
+</html>

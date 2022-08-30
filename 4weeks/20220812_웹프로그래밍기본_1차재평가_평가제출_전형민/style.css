@@ -1,0 +1,2322 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+@media (min-width: 1025px) {
+  body > div { /* 전체 묶음 */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  body > div > div { /* 좌측 사이드바 */
+    width: 5vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+  }
+  body > div > div > div { /* invisible-중앙 정렬용 */
+    width: 1.5vw;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    background-color: #19CE60;
+  }
+  body > div > div > div > div { /* 점 5개 묶음용 */
+    width: inherit;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > div > div > div > div { /* 점 5개 */
+    width: inherit;
+    height: 2.5vh;
+    background-color: #FFF7E1;
+  }
+  body > div > main {
+    width: 95vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgba(25, 206, 96, 0.2);
+  }
+  body > div > main > section {
+    width: 70vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) { /* MacBook의 중앙 왼쪽 상단 묶음 박스, 다른 기기들의 상단 묶음 박스 */
+    width: 35vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    right: 2vw;
+    bottom: 15vh;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) { /* Waver logo 박스 */
+    width: 35vw;
+    height: 6vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div { /* invisible - waver와 happy 묶음 박스 */
+    width: 17.5vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) { /* Waver */
+    font-size: 2rem;
+    font-weight: 800;
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) { /* Happy 중앙 정렬 용*/
+    width: 5vw;
+    height: 2.5vh;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #F7F9FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    bottom: 1vh;
+    background-color: #19CE60;
+    border-radius: 8px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) { /* 로그인 전체 묶음 박스*/
+    width: inherit;
+    height: 33vh;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) { /* ID 로그인, 일회용 번호 묶음 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) { /* ID 로그인 중앙 정렬용*/
+    width: 17.5vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-radius: 5px 0 0 0;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) { /* 일회용 번호 중앙 정렬용*/
+    width: 17.5vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #122023;
+    background-color: #DAE1E6;
+    border-radius: 0 5px 0 0;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) { /* ID 인풋, Password 인풋, 로그인 전체 묶음 박스 */
+    width: inherit;
+    height: 27vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div { /* ID, password, 로그인 가운데 정렬용 박스 */
+    width: 25vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) { /* id, password, forgotpassword? 묶음 박스 */
+    width: inherit;
+    height: 11vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input { /* ID, PASSWORD 인풋 박스 */
+    width: inherit;
+    height: 4vh;
+    background-color: #DAE1E6;
+    border-style: none;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input::-moz-placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input:-ms-input-placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input::placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(3) { /* Forgot Password? */
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) { /* 로그인, ip, 바 묶음 박스 */
+    width: inherit;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > button { /* 로그인 button */
+    width: 15vw;
+    height: 5vh;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-style: none;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) { /* IP Security */
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) { /* bar */
+    width: 4vw;
+    height: 2vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 8px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) > div { /* bar 안에 있는 동그라미 */
+    width: 1vw;
+    height: 1.3vh;
+    position: relative;
+    right: 0.2vw;
+    background-color: #F7F9FA;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) { /* 증시 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) { /* "증시" 중앙 정렬용 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) { /* KOSDAQ 네모박스 203332.124 묶음 박스 */
+    width: 25vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div { /* KOSDAQ 네모박스 203332.124 justify-content: space-between 정렬용 */
+    width: 10vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div > div:nth-child(2) { /* 네모박스 */
+    width: 0.7vw;
+    height: 1vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div { /* 밑줄 세 개 중앙 정렬용 */
+    width: 3vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div { /* 밑줄 border-radius 일괄 처리 */
+    border-radius: 2.5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(1), body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div div:nth-child(3) { /* 밑줄  */
+    width: 1.8vw;
+    height: 0.4vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(2) { /* 밑줄 */
+    width: 3vw;
+    height: 0.4vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(3) { /* 밑줄 */
+    width: 2.3vw;
+    height: 0.4vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) { /* 날씨 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div { /* "날씨" 중앙 정렬용 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) { /* 비 온뒤 땅이 굳을 예정 박스 */
+    width: 25vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div {
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div { /* 밑줄 세 개 중앙 정렬용 */
+    width: 3vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div { /* 밑줄 border-radius 일괄 처리 */
+    border-radius: 2.5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div:nth-child(1), body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div div:nth-child(3) { /* 밑줄  */
+    width: 3vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div:nth-child(2) { /* 밑줄 */
+    width: 1.8vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) { /* MacBook의 중앙 오른쪽 하단 묶음 박스, 다른 기기들의 하단 묶음 박스 */
+    width: 35vw;
+    height: 50vh;
+    position: relative;
+    top: 15vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) { /* 겹치는 박스 중 z-index:1 */
+    width: inherit;
+    height: 37vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+    position: relative;
+    z-index: 1;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div {
+    width: 32vw;
+    height: 32vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(1) { /* 뉴스 */
+    width: inherit;
+    height: 3vh;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) { /* 초록색 박스 */
+    width: inherit;
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) { /* 네모 세 개 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div { /* 네모 세 개 justify-content:space-between 용 */
+    width: 3vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div > div { /* 네모 세 개 */
+    width: 0.7vw;
+    height: 1vh;
+    background-color: #DAE1E6;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(1) {
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) { /* 충격, >, 피그마, 결국 쓸모.. 묶음 상자 */
+    width: inherit;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(1) { /* 충격 속보 정렬용 */
+    width: 7vw;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) { /* >, 피그마,... 묶음 상자 */
+    width: 18vw;
+    height: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) { /* > 중앙 정렬용*/
+    width: 4vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div { /* > */
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid #37A0F4;
+    border-right: 4px solid #37A0F4;
+    border-radius: 3px;
+    transform: rotate(45deg);
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) { /* 피그마, 결국 쓸모.. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #122023;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div > span { /* 피그마 */
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(3) { /* invisible - 정렬용 iphone(display:none;) */
+    width: 10vw;
+    height: 4vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(5) { /* lorem */
+    width: inherit;
+    height: 6vh;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) { /* 겹치는 박스 중 z-index:2 */
+    width: inherit;
+    height: 30vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    position: relative;
+    bottom: 16vh;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div { /* 글씨가 보이는 곳, 아래 정렬용 박스 */
+    width: inherit;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div { /* 전체 중앙 정렬 묶음 박스 */
+    width: 32vw;
+    height: 10vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) { /* 첫 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div { /* 첫 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(1) { /* Creators 박스 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(3) { /* 크리에이터 박스 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(4) { /* 스쿨비지니스 박스 */
+    width: 7vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) { /* 두 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div { /* 두 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(1) { /* Partners 박스 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(3) { /* SME 풀케어 시스템 박스 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(4) { /* 비즈니스 박스 */
+    width: 7vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(5) { /* 스토어 개설 박스 */
+    width: 8vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) { /* 세 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div { /* 세 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(1) { /* Developers 박스 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(3) { /* 네이버 개발자 센터 박스 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) { /* Open API 박스 */
+    width: 7vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) > div { /* Open API 초록 박스, 중앙 정렬용 */
+    width: 6vw;
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 10.5px;
+  }
+}
+@media (min-width: 429px) and (max-width: 1024px) {
+  body > div { /* 전체 묶음 */
+    width: 100vw;
+    height: 125vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  body > div > div { /* 좌측 사이드바 */
+    width: 5vw;
+    height: 125vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+  }
+  body > div > div > div { /* invisible-중앙 정렬용 */
+    width: 1vw;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    background-color: #19CE60;
+  }
+  body > div > div > div > div { /* 점 5개 묶음용 */
+    width: inherit;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > div > div > div > div { /* 점 5개 */
+    width: inherit;
+    height: 1vh;
+    border-radius: 10.5px;
+    background-color: #FFF7E1;
+  }
+  body > div > main {
+    width: 95vw;
+    height: 125vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #F5F5F5;
+  }
+  body > div > main > section {
+    width: 80vw;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) { /* MacBook의 중앙 왼쪽 상단 묶음 박스, 다른 기기들의 상단 묶음 박스 */
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) { /* Waver logo 박스 */
+    width: 20vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div { /* invisible - waver와 happy 묶음 박스 */
+    width: 50vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+    position: relative;
+    left: 5vw;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) { /* Waver */
+    font-size: 2rem;
+    font-weight: 800;
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) { /* Happy 중앙 정렬 용*/
+    width: 5vw;
+    height: 2.5vh;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #F7F9FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    bottom: 1vh;
+    background-color: #19CE60;
+    border-radius: 8px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) { /* 로그인 전체 묶음 박스*/
+    width: inherit;
+    height: 30vh;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) { /* ID 로그인, 일회용 번호 묶음 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) { /* ID 로그인 중앙 정렬용*/
+    width: 25vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-radius: 5px 0 0 0;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) { /* 일회용 번호 중앙 정렬용*/
+    width: 25vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #122023;
+    background-color: #DAE1E6;
+    border-radius: 0 5px 0 0;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) { /* ID 인풋, Password 인풋, 로그인 전체 묶음 박스 */
+    width: inherit;
+    height: 23vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div { /* ID, password, 로그인 가운데 정렬용 박스 */
+    width: 30vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) { /* id, password, forgotpassword? 묶음 박스 */
+    width: inherit;
+    height: 11vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input { /* ID, PASSWORD 인풋 박스 */
+    width: inherit;
+    height: 4vh;
+    background-color: #DAE1E6;
+    border-style: none;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input::-moz-placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input:-ms-input-placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input::placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(3) { /* Forgot Password? */
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) { /* 로그인, ip, 바 묶음 박스 */
+    width: inherit;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > button { /* 로그인 button */
+    width: 20vw;
+    height: 5vh;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-style: none;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) { /* IP Security */
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) { /* bar */
+    width: 4vw;
+    height: 2vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 8px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) > div { /* bar 안에 있는 동그라미 */
+    width: 1vw;
+    height: 1.3vh;
+    position: relative;
+    right: 0.2vw;
+    background-color: #F7F9FA;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) { /* 증시 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 5px;
+    filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) { /* "증시" 중앙 정렬용 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) { /* KOSDAQ 네모박스 203332.124 묶음 박스 */
+    width: 25vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div { /* KOSDAQ 네모박스 203332.124 justify-content: space-between 정렬용 */
+    width: 15vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div > div:nth-child(2) { /* 네모박스 */
+    width: 1vw;
+    height: 1.1vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div { /* 밑줄 세 개 중앙 정렬용 */
+    width: 3vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div { /* 밑줄 border-radius 일괄 처리 */
+    border-radius: 2.5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(1), body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div div:nth-child(3) { /* 밑줄  */
+    width: 1.8vw;
+    height: 0.4vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(2) { /* 밑줄 */
+    width: 3vw;
+    height: 0.4vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(3) { /* 밑줄 */
+    width: 2.3vw;
+    height: 0.4vh;
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) { /* 날씨 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div { /* "날씨" 중앙 정렬용 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) { /* 비 온뒤 땅이 굳을 예정 박스 */
+    width: 25vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div {
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+    width: 5vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div { /* 밑줄 세 개 중앙 정렬용 */
+    width: 3vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div { /* 밑줄 border-radius 일괄 처리 */
+    border-radius: 2.5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div:nth-child(1), body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div div:nth-child(3) { /* 밑줄  */
+    width: 3vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div:nth-child(2) { /* 밑줄 */
+    width: 1.8vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) { /* MacBook의 중앙 오른쪽 하단 묶음 박스, 다른 기기들의 하단 묶음 박스 */
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    top: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) { /* 겹치는 박스 중 z-index:1 */
+    width: inherit;
+    height: 37vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+    position: relative;
+    z-index: 1;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div {
+    width: 45vw;
+    height: 32vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(1) { /* 뉴스 */
+    width: inherit;
+    height: 3vh;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) { /* 초록색 박스 */
+    width: inherit;
+    height: 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) { /* 네모 세 개 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div { /* 네모 세 개 justify-content:space-between 용 */
+    width: 5vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div > div { /* 네모 세 개 */
+    width: 1vw;
+    height: 1vh;
+    background-color: #DAE1E6;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(1) {
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) { /* 충격, >, 피그마, 결국 쓸모.. 묶음 상자 */
+    width: inherit;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(1) { /* 충격 속보 정렬용 */
+    width: 9vw;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) { /* >, 피그마,... 묶음 상자 */
+    width: 25vw;
+    height: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) { /* > 중앙 정렬용*/
+    width: 4vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div { /* > */
+    width: 10px;
+    height: 10px;
+    border-top: 4px solid #37A0F4;
+    border-right: 4px solid #37A0F4;
+    border-radius: 3px;
+    transform: rotate(45deg);
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) { /* 피그마, 결국 쓸모.. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div > span { /* 피그마 */
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(3) { /* invisible - 정렬용 iphone(display:none;) */
+    width: 5vw;
+    height: 4vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(5) { /* lorem */
+    width: inherit;
+    height: 6vh;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) { /* 겹치는 박스 중 z-index:2 */
+    width: inherit;
+    height: 30vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    position: relative;
+    bottom: 18vh;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div { /* 글씨가 보이는 곳, 아래 정렬용 박스 */
+    width: inherit;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div { /* 전체 중앙 정렬 묶음 박스 */
+    width: 45vw;
+    height: 10vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) { /* 첫 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div { /* 첫 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(1) { /* Creators 박스 */
+    width: 9vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(3) { /* 크리에이터 박스 */
+    width: 9vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(4) { /* 스쿨비지니스 박스 */
+    width: 10vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(4) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) { /* 두 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div { /* 두 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(1) { /* Partners 박스 */
+    width: 9vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(3) { /* SME 풀케어 시스템 박스 */
+    width: 9vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(4) { /* 비즈니스 박스 */
+    width: 10vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(5) { /* 스토어 개설 박스 */
+    width: 10vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(5) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) { /* 세 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div { /* 세 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(1) { /* Developers 박스 */
+    width: 9vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(3) { /* 네이버 개발자 센터 박스 */
+    width: 9vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) { /* Open API 박스 */
+    width: 10vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) > div { /* Open API 초록 박스, 중앙 정렬용 */
+    width: 8vw;
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 10.5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) > div > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+}
+@media (max-width: 428px) {
+  body > div { /* 전체 묶음 */
+    width: 100vw;
+    height: 125vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  body > div > div { /* 좌측 사이드바 */
+    width: 5vw;
+    height: 125vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+  }
+  body > div > div > div { /* invisible-중앙 정렬용 */
+    width: 2vw;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #19CE60;
+  }
+  body > div > div > div > div { /* 점 5개 묶음용 */
+    width: inherit;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > div > div > div > div { /* 점 5개 */
+    width: inherit;
+    height: 1.5vh;
+    border-radius: 10.5px;
+    background-color: #FFF7E1;
+  }
+  body > div > main {
+    width: 95vw;
+    height: 125vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #F5F5F5;
+  }
+  body > div > main > section {
+    width: 85vw;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) { /* MacBook의 중앙 왼쪽 상단 묶음 박스, 다른 기기들의 상단 묶음 박스 */
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) { /* Waver logo 박스 */
+    width: 40vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div { /* invisible - waver와 happy 묶음 박스 */
+    width: 80vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+    position: relative;
+    left: 5vw;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) { /* Waver */
+    font-size: 2rem;
+    font-weight: 800;
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) { /* Happy 중앙 정렬 용*/
+    width: 10vw;
+    height: 2vh;
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #F7F9FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    bottom: 1vh;
+    left: 17vw;
+    background-color: #19CE60;
+    border-radius: 8px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) { /* 로그인 전체 묶음 박스*/
+    width: inherit;
+    height: 30vh;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) { /* ID 로그인, 일회용 번호 묶음 박스 */
+    width: inherit;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) { /* ID 로그인 중앙 정렬용*/
+    width: 40vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-radius: 5px 0 0 0;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) { /* 일회용 번호 중앙 정렬용*/
+    width: 40vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #122023;
+    background-color: #DAE1E6;
+    border-radius: 0 5px 0 0;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) { /* ID 인풋, Password 인풋, 로그인 전체 묶음 박스 */
+    width: inherit;
+    height: 23vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+    background-color: #F7F9FA;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div { /* ID, password, 로그인 가운데 정렬용 박스 */
+    width: 70vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) { /* id, password, forgotpassword? 묶음 박스 */
+    width: inherit;
+    height: 11vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input { /* ID, PASSWORD 인풋 박스 */
+    width: inherit;
+    height: 4vh;
+    background-color: #DAE1E6;
+    border-style: none;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input::-moz-placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input:-ms-input-placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > input::placeholder {
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(3) { /* Forgot Password? */
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) { /* 로그인, ip, 바 묶음 박스 */
+    width: inherit;
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > button { /* 로그인 button */
+    width: 45vw;
+    height: 5vh;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-style: none;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) { /* IP Security */
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) { /* bar */
+    width: 10vw;
+    height: 1.5vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 8px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) > div { /* bar 안에 있는 동그라미 */
+    width: 3vw;
+    height: 1vh;
+    position: relative;
+    right: 0.2vw;
+    background-color: #F7F9FA;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) { /* 증시 박스 */
+    width: inherit;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+    background-color: #F7F9FA;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) { /* "증시" 중앙 정렬용 */
+    width: 20vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) { /* KOSDAQ 네모박스 203332.124 묶음 박스 */
+    width: 40vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div { /* KOSDAQ 네모박스 203332.124 justify-content: space-between 정렬용 */
+    width: 27vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div > div:nth-child(2) { /* 네모박스 */
+    width: 2vw;
+    height: 1vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+    width: 20vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div { /* 밑줄 세 개 중앙 정렬용 */
+    width: 5vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div { /* 밑줄 border-radius 일괄 처리 */
+    border-radius: 2.5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(1) { /* 밑줄  */
+    width: 5vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(2) { /* 밑줄 */
+    width: 8vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(3) { /* 밑줄 */
+    width: 6vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) { /* 날씨 박스 */
+    width: 80vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+    position: relative;
+    bottom: 1.8vh;
+    left: 3vw;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div { /* "날씨" 중앙 정렬용 */
+    width: 20vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) { /* 비 온뒤 땅이 굳을 예정 박스 */
+    width: 40vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div {
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+    width: 20vw;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div { /* 밑줄 세 개 중앙 정렬용 */
+    width: 5vw;
+    height: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div { /* 밑줄 border-radius 일괄 처리 */
+    border-radius: 2.5px;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div:nth-child(1), body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div div:nth-child(3) { /* 밑줄  */
+    width: 8vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(1) > div:nth-child(4) > div:nth-child(3) > div > div:nth-child(2) { /* 밑줄 */
+    width: 4vw;
+    height: 0.4vh;
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) { /* MacBook의 중앙 오른쪽 하단 묶음 박스, 다른 기기들의 하단 묶음 박스 */
+    width: 80vw;
+    height: 60vh;
+    position: relative;
+    top: 2vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) { /* 겹치는 박스 중 z-index:1 */
+    width: inherit;
+    height: 48vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+    position: relative;
+    z-index: 1;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div {
+    width: 70vw;
+    height: 40vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(1) { /* 뉴스 */
+    width: inherit;
+    height: 4vh;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) { /* 초록색 박스 */
+    width: inherit;
+    height: 17vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #F7F9FA;
+    background-color: #19CE60;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) { /* 네모 세 개 묶음 박스 */
+    width: inherit;
+    height: 4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div { /* 네모 세 개 justify-content:space-between 용 */
+    width: 7vw;
+    height: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div > div { /* 네모 세 개 */
+    width: 1.9vw;
+    height: 1.2vh;
+    background-color: #DAE1E6;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(1) {
+    background-color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) { /* 충격, >, 피그마, 결국 쓸모.. 묶음 상자 */
+    width: inherit;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(1) { /* 충격 속보 정렬용 */
+    width: 18vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) { /* >, 피그마,... 묶음 상자 */
+    width: 55vw;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) { /* > 중앙 정렬용*/
+    width: 3vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div { /* > */
+    width: 9px;
+    height: 9px;
+    border-top: 4px solid #37A0F4;
+    border-right: 4px solid #37A0F4;
+    border-radius: 3px;
+    transform: rotate(45deg);
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) { /* 피그마, 결국 쓸모.. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div > span { /* 피그마 */
+    color: #19CE60;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > div:nth-child(3) { /* invisible - 정렬용 iphone(display:none;) */
+    width: 10vw;
+    height: 4vh;
+    display: none;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(5) { /* lorem */
+    width: inherit;
+    height: 10vh;
+    font-size: 0.625rem;
+    font-weight: 400;
+    color: #122023;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) { /* 겹치는 박스 중 z-index:2 */
+    width: inherit;
+    height: 40vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    position: relative;
+    bottom: 28vh;
+    left: 5vw;
+    background-color: #F7F9FA;
+    border-radius: 5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div { /* 글씨가 보이는 곳, 아래 정렬용 박스 */
+    width: 80vw;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div { /* 전체 중앙 정렬 묶음 박스 */
+    width: 70vw;
+    height: 10vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) { /* 첫 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div { /* 첫 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(1) { /* Creators 박스 */
+    width: 15vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(3) { /* 크리에이터 박스 */
+    width: 15vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(4) { /* 스쿨비지니스 박스 */
+    width: 15vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > div:nth-child(4) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) { /* 두 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div { /* 두 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(1) { /* Partners 박스 */
+    width: 15vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(3) { /* SME 풀케어 시스템 박스 */
+    width: 22vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(4) { /* 비즈니스 박스 */
+    width: 12vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(4) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(5) { /* 스토어 개설 박스 */
+    width: 14vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(5) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) { /* 세 번째 줄 묶음 박스 */
+    width: inherit;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-size: 0.5rem;
+    font-weight: 400;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div { /* 세 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(1) { /* Developers 박스 */
+    width: 15vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #122023;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(1) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(2) { /* 초록색 선 박스 */
+    width: 3vw;
+    height: 3vh;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(2) > div { /* 초록색 선 */
+    width: 0.5vw;
+    height: 1.5vh;
+    background-color: #19CE60;
+    border-radius: 10px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(3) { /* 네이버 개발자 센터 박스 */
+    width: 22vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(3) > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) { /* Open API 박스 */
+    width: 15vw;
+    height: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) > div { /* Open API 초록 박스, 중앙 정렬용 */
+    width: 13vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #19CE60;
+    border-radius: 10.5px;
+  }
+  body > div > main > section > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(3) > div:nth-child(4) > div > div {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+}/*# sourceMappingURL=style.css.map */

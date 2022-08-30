@@ -1,0 +1,77 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > div {
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+body > div > div {
+  width: 25vw;
+  height: inherit;
+}
+
+body > div > div:nth-child(1) > div {
+  width: inherit;
+  height: 15vh;
+  background-color: gold;
+}
+
+body > div > div:nth-child(2) {
+  width: 25vw;
+  height: inherit;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > div > div:nth-child(2) > span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+body > div > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body > div > div:nth-child(3) > div:nth-child(1) {
+  width: 25vw;
+  height: 10vh;
+  background-color: blue;
+  position: absolute;
+  top: 21vh;
+  right: 28vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+body > div > div:nth-child(3) > div:nth-child(1) > div {
+  width: 3vw;
+  height: 6vh;
+  background-color: white;
+}
+body > div > div:nth-child(3) > div:nth-child(1) + div:nth-child(2) {
+  width: 25vw;
+  height: 15vh;
+  background-color: green;
+  position: relative;
+  top: 55vh;
+}
+
+nav {
+  width: 60vw;
+  height: 50vh;
+  border: 5px solid black;
+  position: absolute;
+  z-index: 2;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li>menu-1</li>
+      <li>menu-2</li>
+      <li>menu-3</li>
+      <li>menu-4</li>
+      <li>menu-5</li>
+      <li>menu-6</li>
+      <li>menu-7</li>
+      <li>menu-8</li>
+      <li>menu-9</li>
+      <li>menu-10</li>
+      <li>menu-11</li>
+      <li>menu-12</li>
+      <li>menu-13</li>
+      <li>menu-14</li>
+      <li>menu-15</li>
+      <li id="test">menu-16</li>
+      <li>menu-17</li>
+      <li>menu-18</li>
+      <li>menu-19</li>
+      <li>menu-20</li>
+      <li>menu-21</li>
+      <li>menu-22</li>
+      <li>menu-23</li>
+      <li>menu-24</li>
+      <li>menu-25</li>
+      <li>menu-26</li>
+      <li>menu-27</li>
+      <li>menu-28</li>
+    </ul>
+    <div id="errorCheck">
+      <div>에러</div>
+      <div>체크</div>
+    </div>
+  </div>
+
+  <script>
+
+    // const test = document.getElementById('test');
+    // console.log(test);
+
+    // test.addEventListener('click', function() {
+    //   alert('merong');
+    // })
+
+
+
+    // 명령과 선언이 혼합되어 있다.
+    // 반복문을 통해서.
+    // const liItems = document.querySelectorAll('#root>ul>li');
+    // console.log(liItems);
+
+    // for(let i = 0; i < liItems.length; i++) {
+    //   liItems[i].addEventListener('click', function() {
+    //     alert(liItems[i].textContent);
+    //   })
+    // }
+
+
+
+    const liItems = document.querySelectorAll('#root>ul>li');
+    // console.log(liItems);
+    const container = document.getElementsByTagName('ul')[0];
+    // console.log(container)
+    
+    // ul태그에 함수를 적용했는데 자식에게 상속함
+    // container.addEventListener('click', function() {
+    //   console.log('hi');
+    // })  
+
+
+    // container = 부모                        doojin(event object) = 자식
+    // container.addEventListener('click', function(doojin) {
+    //   console.log(doojin);
+    //   doojin.target.style.backgroundColor = colorData;
+    // });
+    // let colorData = 'cadetblue';
+
+
+    const root = document.getElementById('root');
+    // console.dir(root)
+    // root.style.width = window.document.body.clientWidth;
+    // root.style.height = window.document.body.clientHeight;
+    // root.style.border = "1px solid red";
+
+    // root.addEventListener('mousemove', function(event) {
+    //   // console.log(event);
+    //   console.log('현재 마우스의 가로 위치는 ' + event.pageX + 'px 입니다.');
+    //   console.log('현재 마우스의 가로 위치는 ' + event.pageY + 'px 입니다.');
+    // })
+    // console.dir(window.document.body.clientWidth);
+
+
+
+
+
+    // 유연하게 만든 코드
+    // function jongin(containerElement, operateColor, eventType) {
+    //   let colorData = operateColor;
+    //     containerElement.addEventListener(eventType, function(event){
+    //     event.target.style.backgroundColor = colorData;
+    //   })
+    // }
+    // jongin(container, "cadetblue", "click");
+
+
+
+
+    // // 버그 해결하기
+    // // console.log(errorCheck);
+    // let errorCheck = document.getElementById('errorCheck');
+
+    // let eventTpyeArr = ['click', 'dblclick']
+
+    // console.dir(window)
+    // function jongin(containerElement, operateColor, eventType) {
+    //   // console.dir(containerElement)
+    //   let colorData = operateColor;
+    //   if(containerElement.children.length > 0 && (typeof operateColor) === "string" && (typeof eventType) === "string"){
+    //     for(let i = 0; i < eventTpyeArr.length; i++){
+    //       if(eventTpyeArr[i] === eventType) {
+    //         containerElement.addEventListener(eventType, function(event){
+    //         event.target.style.backgroundColor = colorData;
+    //         }
+    //       )}
+    //     }
+    //   }
+    // }
+    //   jongin(container, "red", "scroll");
+
+
+
+      // 삼항 연산자
+      // 간단한 분류에 사용
+      let a = true ? "merong" : "형민이 바보"
+
+
+
+
+      // 강사님
+      console.log(typeof container) /* === object */
+      function jongin(containerElement, operateColor, eventTpye) {
+        if(typeof (containerElement) === "object") {
+          if(typeof (operateColor) === "string") {
+            if(typeof (eventTpye) === "string") {
+              // ==> && 연산자로 합치기
+              let colorData = operateColor;
+              containerElement.addEventListener(eventTpye, function (event){
+                event.target.style.backgroundColor = colorData;
+              })
+
+
+
+
+            } else {
+
+            }
+
+
+
+
+          } else {
+
+          }
+
+
+
+
+        } else {
+
+        }
+
+
+
+
+      }
+
+      jongin(container, "red", "click")
+    </script>
+</body>
+</html>

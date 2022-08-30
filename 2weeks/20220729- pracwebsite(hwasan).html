@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HwaSan</title>
+
+  <style>
+    /* reset */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    /* 레이아웃 테스트 선 */
+    .bd-test {border: 1px solid pink;}
+
+    /* flex */
+    .dp-flex {display:flex;}
+    
+    /* flex-wrap 줄바꿈*/
+    .fw-nowrap {flex-wrap: nowrap;}
+    .fw-wrap {flex-wrap: wrap;}
+    .fw-wrap-reverse {flex-wrap: wrap-reverse;}
+
+    /* flex-direction 정렬 방향*/
+    .fd-row {flex-direction: row;}
+    .fd-row-reverse {flex-direction: row-reverse;}
+    .fd-column {flex-direction: column;}
+    .fd-column-reverse {flex-direction: column-reverse;}
+
+    /* justify-content 수평 방향*/
+    .jc-center {justify-content: center;}
+    .jc-right {justify-content: right;}
+    .jc-left {justify-content: left;}
+    .jc-flex-start {justify-content: flex-start;}
+    .jc-flex-end {justify-content: flex-end;}
+    .jc-space-between {justify-content: space-between;}
+    .jc-space-around {justify-content: space-around;}
+
+    /* align-items 수직 방향*/
+    .ai-center {align-items: center;}
+    .ai-flex-start {align-items: flex-start;}
+    .ai-flex-end {align-items: flex-end;}
+    .ai-stretch {align-items: stretch;}
+    .ai-baseline {align-items: baseline;}
+
+    /* 자식 요소가 여러 줄 일때 수직 방향 맞춤 */
+    .ac-stretch {align-content: stretch;}
+    .ac-flex-start {align-content: flex-start;}
+    .ac-flex-end {align-content: flex-end;}
+    .ac-center {align-content: center;}
+    .ac-space-between {align-content: space-between;}
+    .ac-space-around {align-content: space-around;}
+
+    /* 개별 지정 */
+    .as-center {align-self: center;}
+    .as-flex-end {align-self: flex-end;}
+    .as-flex-start {align-self: flex-start;}
+    .js-center {justify-self: center;}
+    .js-flex-end {justify-self: flex-end;}
+    .js-flex-start {justify-self: flex-start;}
+
+    /* grid */
+    .dp-grid {display: grid;}
+    .gt-columns {grid-template-columns: 10;}
+    .gt-rows {grid-template-rows: 10;}
+    .gap- {gap: 10;}
+
+    /* header 상단 부분 */
+    body > header {
+      width: 1920px;
+      height: 150px;
+      border: 2px solid pink;
+      border-top-style: hidden;
+      border-left-style: hidden;
+      border-right-style: hidden;
+      position: fixed;
+    }
+    body > header > div:nth-child(1) {
+      width: 90px;
+      height: 150px;
+    }
+    header:hover {
+      background: linear-gradient(to right, transparent, rgb(248, 200, 195))
+    }
+    body > header > div:nth-child(2) {
+      width: 90px;
+      height: 150px;
+    }
+    body > header > div:nth-child(3) {
+      height: 150px;
+      min-width: 70vw;
+    }
+    body > header > div > span {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    body > header > div > a > div {
+      font-size: 130px;
+      font-weight: bold;
+      color:pink;
+    }
+    a {
+      text-decoration-line: none;
+    }
+
+    /* Main 부분 */
+    body > main {
+      width: 100vw;
+      height: 84vh;
+      position: absolute;
+      top: 150px;
+      border: 2px solid pink;
+      border-top-style: hidden;
+      border-left-style: hidden;
+      border-right-style: hidden;
+    }
+    body > main > div {
+      width: 50vw;
+      height: 84vh;
+      border: 2px solid pink;
+      border-top-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: hidden;
+    }
+  </style>
+
+
+</head>
+<body>
+  <header class="dp-flex">
+    <div></div>
+    <div class="dp-flex ">
+      <span>
+        대화산파 <br>
+        13대제자 <br>
+        청명 <br><br><br><br>
+        LICO / 비가
+      </span>
+    </div>
+    <div class=" dp-flex jc-center ai-center">
+      <a href="https://comic.naver.com/webtoon/list?titleId=769209">
+        <div>HwaSan</div>
+      </a>
+    </div>
+  </header>
+
+
+
+  <main class="dp-flex">
+    <div class="">
+      <div></div>
+      <div></div>
+    </div>
+
+
+
+    <div class="">
+      <div 백천></div>
+      <div 유이설></div>
+    </div>
+  </main>
+
+
+
+
+
+
+  <section></section>
+</body>
+</html>

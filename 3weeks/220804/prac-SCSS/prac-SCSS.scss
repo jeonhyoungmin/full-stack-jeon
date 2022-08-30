@@ -1,0 +1,46 @@
+/* This CSS will print because %message-shared is extended. */
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+// This CSS won't print because %equal-heights is never extended.
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}
+
+%color-shared {
+  color: white;
+  border: 3px solid pink;
+  background-color: black;
+}
+
+body > div {
+  width: 50vw;
+  height: 50vh;
+  @extend %color-shared;
+  border-radius: 10px;
+}
+
+.fd-flex {display: flex;}

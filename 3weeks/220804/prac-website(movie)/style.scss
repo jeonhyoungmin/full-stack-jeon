@@ -1,0 +1,148 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin flex-setting($jc, $ai, $fd:row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+@mixin grid-setting ($numbers, $fr) {
+  display: grid;
+  grid-template-columns: repeat($numbers, $fr);
+}
+
+%movie-shared {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.movie-main {@extend %movie-shared; background-image: url("https://i.ytimg.com/vi/oGZRqMR_KOw/maxresdefault.jpg"); background-size: cover;}
+.movie-1 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg?type=f125")}
+.movie-2 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220720_283/1658284839003UzxoT_JPEG/movie_image.jpg?type=f125")}
+.movie-3 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220509_176/1652081912471yhg3N_JPEG/movie_image.jpg?type=f125")}
+.movie-4 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220708_75/16572722362230AyHS_JPEG/movie_image.jpg?type=f125")}
+.movie-5 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220622_63/165588851818770zWk_JPEG/movie_image.jpg?type=f125")}
+.movie-6 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220607_129/16545872892918GA4h_JPEG/movie_image.jpg?type=f125")}
+.movie-7 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220704_246/16569027452369rlGb_JPEG/movie_image.jpg?type=f125")}
+.movie-8 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220706_263/1657071698045SKrKH_JPEG/movie_image.jpg?type=f125")}
+.movie-9 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220718_224/1658121739465fgRof_JPEG/movie_image.jpg?type=f125")}
+.movie-10 {@extend %movie-shared; background-image: url("https://movie-phinf.pstatic.net/20220719_204/1658213979488T3KN1_JPEG/movie_image.jpg?type=f125")}
+
+
+body > div {
+  @include size(100vw, 100vh);
+  @include flex-setting(center, center, column);
+  & > main {
+    @include size(100vw, 50vh);
+    @include flex-setting(center, flex-start);
+    & > header {
+      @include size(90vw, 15vh);
+      @include flex-setting(center, center);
+      & > nav {
+        @include size(inherit, 10vh);
+      }
+    }
+  }
+
+  & > section {
+    @include size(100vw, 50vh);
+    @include flex-setting(center, center, column);
+    margin-top: 10vh;
+    & > div:nth-child(1) {
+      @include size(90vw, 35vh);
+      @include grid-setting(2, 1fr);
+      justify-content: space-between;
+      & > div {
+        @include size(40vw, 35vh);
+      }
+      & > aside {
+        @include size(50vw, 25vh); 
+        align-self: end;
+      }
+    }
+    & > div:nth-child(2) {
+      @include size(90vw, 25vh);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-top: 1vh;
+      & > div {
+        @include size(18vw, 25vh);
+      }
+    }
+  }
+}
+
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+@media (max-width: 360px) {
+  body > div {
+    & > main {
+      @include flex-setting(flex-end, flex-start);
+      margin-top: 2vh;
+      & > header {
+        @include size(15vw, 10vh);
+        @include flex-setting(flex-start, center);
+        & > nav {
+          @include size(10vw, 5h);
+        }
+      }
+    }
+
+    & > section {
+      @include size(90vw, 50vh);
+      @include flex-setting(center, center,column);
+      & > div:nth-child(1) {
+        & > div {
+          @include size(90vw, 50vh);
+        }
+        & > aside {
+          @include size(90vw, 40vh); 
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(80vw, 25vh);
+        @include grid-setting(2, 1fr);
+        flex-wrap: wrap;
+        & > div {
+          @include size(40vw, 25vh);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 361px) and (max-width: 1024px) {
+  body > div {
+    & > main {
+      @include size(90vw, 50vh);
+      margin-top: 2vh;
+      & > header {
+        @include size(70vw, 15vh);
+        & > nav {
+        }
+      }
+    }
+
+    & > section {
+      @include size(90vw, 50vh);
+      & > div:nth-child(1) {
+        @include size(80vw, 35vh);
+        & > div {
+        }
+        & > aside {
+          @include size(40vw, 25vh); 
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(80vw, 25vh);
+        @include grid-setting(5, 1fr);
+        flex-wrap: wrap;
+        & > div {
+          @include size(16vw, 25vh);
+        }
+      }
+    }
+  }
+}

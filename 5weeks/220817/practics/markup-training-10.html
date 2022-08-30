@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    #root > div {
+      width: 30vw;
+      height: 100vh;
+      background-color: rgb(59, 54, 54);
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #drawer {
+      width: 5vmin;
+      height: 6vmin;
+      background-color: red;
+      margin-top: 1vh;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      margin-right: 1vw;
+    }
+
+    #drawer > div {
+      width: 5vmin;
+      height: 1vmin;
+      background-color: grey;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div id="drawer">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let drawer = document.getElementById('drawer');
+    console.log(drawer)
+    let menuBarX = document.querySelectorAll('#drawer > div')
+    console.log(menuBarX[0])
+    
+    
+    let backDrawer = true
+    let menuNumber = document.createElement('div');
+    drawer.addEventListener('click', function() {
+      if(backDrawer === true){
+        backDrawer = false;
+        drawer.style.justifyContent = "center"
+        menuBarX[0].style.transform = "rotate(120deg)"
+        menuBarX[0].style.position = "relative"
+        menuBarX[0].style.top = "1vmin"
+        menuBarX[1].style.display = 'none'
+        menuBarX[2].style.transform = "rotate(60deg)"
+        for(let i=1; i=8; i++){
+          root.children[0].appendChild(menuNumber);
+        }
+      } else {
+        backDrawer = true;
+        console.log(backDrawer);
+        for(let i = 0; i<menuBarX.length; i++){
+          menuBarX[i] = menuBarX[0];
+          console.log(menuBarX)
+        }
+      }
+    })
+    console.log(drawer)
+    console.log(root.children[0])
+    </script>
+</body>
+</html>

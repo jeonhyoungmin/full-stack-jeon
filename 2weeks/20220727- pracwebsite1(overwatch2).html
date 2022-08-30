@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OverWatch2</title>
+  
+  <style>
+    * {
+      margin: 0; 
+      height: 0; 
+      box-sizing: border-box;
+    }
+    /* background-image 사용 */
+    body > div {
+      width: 100vw;
+      min-height: 100vh;
+      /* background-image: url("image/overwatch2.jpg"); */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* 윤곽선 */
+    .bd-test {border: 1px solid #333}
+
+    /* 상속 너비와 높이 */
+    .inherit-width {width: inherit;}
+    .inherit-height {height: inherit;}
+
+    /* 정렬 */
+    .dp-flex {display:flex;}
+    .dp-block {display:block;}
+    .dp-inline-block {display:inline-block;}
+    .dp-inline {display:inline;}
+    .jc-flex-end {justify-content: flex-end;}
+    .jc-center {justify-content: center;}
+    .ai-center {align-items: center;}
+
+    .circle {
+      width: 12.5vw;
+      height: 10vh;
+      border-radius: 25% 10%;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <!-- nav 위치를 위해 flex 사용 -->
+    <header class="bd-test inherit-width dp-flex jc-flex-end" style="height: 10vh">
+      <nav class="bd-test inherit-height" style="width: 25vw;"></nav>
+    </header>
+    <!-- 로고가 들어갈 div를 가운데로 위치하기 위해 justify-content:center; 사용 -->
+    <div class="bd-test inherit-width dp-flex jc-center" style="height: 20vh">
+      <div class="bd-test inherit-height" style="width: 25vw;"></div>
+    </div>
+    <!-- 영웅들이 들어갈 서클 -->
+    <main class="bd-test inherit-width" style="height: 70vh;">
+      <div class="bd-test inherit-width dp-flex" style="height: 20vh;">
+        <!-- 분할 칸 -->
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle dp-flex jc-center ai-center">
+            <a href="https://playoverwatch.com/ko-kr/heroes/genji/">
+              <img src="image/genji.jpg" alt="genji">
+            </a>
+          </div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+      </div>
+      <div class="bd-test inherit-width dp-flex" style="height: 20vh;">
+        <div class="bd-test inherit-height" style="width: 12.5vw;"></div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 12.5vw;"></div>
+      </div>
+      <div class="bd-test inherit-width dp-flex" style="height: 20vh;">
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+        <div class="bd-test inherit-height dp-flex jc-center ai-center" style="width: 25vw;">
+          <div class="bd-test circle"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

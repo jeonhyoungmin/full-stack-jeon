@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <header>
+      <ul></ul>
+    </header>
+    <main></main>
+    <footer></footer>
+  </div>
+
+  <script>
+    let studentList = [
+      "강",
+      "김",
+      "류",
+      "마",
+      "문",
+      "박",
+      "박",
+      "송",
+      "양",
+      "원",
+      "유",
+      "이",
+      "이",
+      "이",
+      "정",
+      "정",
+      "정",
+      "지",
+      "한",
+      "황",
+      "김",
+      "김",
+      "김",
+      "전",
+      "정",
+      "이",
+      "최",
+      "한"
+    ]
+
+    console.dir(window.document.body.children[0].children[0].children[0]);
+    for(let i = 0; i < studentList.length; i ++) {
+      let liTag = window.document.createElement("li");
+      liTag.textContent = studentList[i];
+      window.document.body.children[0].children[0].children[0].appendChild(liTag);
+    }
+
+    console.log(window.document.body.children[0].children[0].children[0].innerHTML);
+    // console.dir(window.document);
+    // console.dir(window.document.createElement); 객체 안의 함수 = method. 
+    // ==> prototype 안에 f로 표시 되어있음.
+  </script>
+</body>
+</html>

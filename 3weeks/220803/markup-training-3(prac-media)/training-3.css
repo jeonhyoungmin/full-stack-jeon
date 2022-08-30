@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body > div {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://m1.daumcdn.net/cfile176/image/99B382425D105DE608474D");
+  background-size: 100vw 100vh;
+}
+body > div > header {
+  width: 100vw;
+  height: 50vh;
+}
+body > div > header > div {
+  width: 100vw;
+  height: 5vh;
+  background-color: rgba(29, 29, 29, 0.6);
+}
+body > div > header > hr {
+  border: 1px solid black;
+}
+body > div > header > nav {
+  width: 50vw;
+  height: 30vh;
+  background-color: rgba(31, 31, 31, 0.507);
+  position: absolute;
+  bottom: 70vh;
+  left: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+body > div > header > nav > div {
+  width: inherit;
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  color: white;
+}
+body > div > header > nav > div:nth-child(1) {
+  width: inherit;
+  height: 6vh;
+  font-size: 20px;
+}
+body > div > main {
+  width: 100vw;
+  height: 50vh;
+}
+body > div > main > div {
+  width: 40vw;
+  height: 25vh;
+  position: relative;
+  left: 5vw;
+}
+body > div > main > div > div:nth-child(1) {
+  font-size: 130px;
+  color: rgb(228, 135, 135);
+  position: absolute;
+  bottom: 13vh;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+body > div > main > div > div:nth-child(2) {
+  font-size: 130px;
+  color: rgb(120, 247, 120);
+  position: absolute;
+  bottom: 1vh;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+body > div > main > aside {
+  width: 63vw;
+  height: 5vh;
+  margin-top: 1vh;
+  position: relative;
+  left: 6vw;
+  bottom: 2vh;
+  color: white;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}/*# sourceMappingURL=training-3.css.map */

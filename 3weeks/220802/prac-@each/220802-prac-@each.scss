@@ -1,0 +1,12 @@
+$nths: (1:1vw, 2:11vw, 3:21vw, 4:31vw, 5:41vw, 6:51vw, 7:61vw);
+
+
+@each $nth, $width in $nths {
+  & > div:nth-child(#{$nth}) {
+  position:absolute;
+  width: $width;
+  background-color: blue;
+  height: 10vh;
+  }  
+}
+

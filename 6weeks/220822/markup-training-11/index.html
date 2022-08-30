@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    
+    /* #root > div:nth-child(1){
+      width: 60vw;
+      height: 100vh;
+      display: flex;
+    } */
+    /* #root > div:nth-child(1) > div{
+      width: 10vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 12rem;
+    } */
+    /* #root > div:nth-child(1) > div:nth-child(1){
+      position:relative;
+      background-color: rgb(29, 29, 29);
+      z-index: 7;
+    }
+    #root > div:nth-child(1) > div:nth-child(2){
+      position:relative;
+      background-color: rgb(48, 47, 47);
+      z-index: 6;
+    }
+    #root > div:nth-child(1) > div:nth-child(3){
+      position:relative;
+      background-color: rgb(71, 71, 71);
+      z-index: 5;
+    }
+    #root > div:nth-child(1) > div:nth-child(4){
+      position:relative;
+      background-color: rgb(107, 107, 107);
+      z-index: 4;
+    }
+    #root > div:nth-child(1) > div:nth-child(5){
+      position:relative;
+      background-color: rgb(187, 185, 185);
+      z-index: 3;
+    }
+    #root > div:nth-child(1) > div:nth-child(6){
+      position:relative;
+      background-color: rgb(214, 211, 211);
+      z-index: 2;
+    }
+    #root > div:nth-child(1) > div:nth-child(7){
+      position:relative;
+      z-index: 1;
+    } */
+    /* #root > div:nth-child(1) > div:nth-child(2) > div {
+      position: relative;
+      right: 3vw;
+    }
+    #root > div:nth-child(1) > div:nth-child(3) > div{
+      position: relative;
+      right: 3vw;
+    }
+    #root > div:nth-child(1) > div:nth-child(4) > div{
+      position: relative;
+      right: 3vw;
+    }
+    #root > div:nth-child(1) > div:nth-child(5) > div{
+      position: relative;
+      right: 3vw;
+    }
+    #root > div:nth-child(1) > div:nth-child(6) > div{
+      position: relative;
+      right: 3vw;
+    }
+    #root > div:nth-child(1) > div:nth-child(7) > div{
+      position: relative;
+      right: 3vw;
+    } */
+    /* #root > div:nth-child(2){
+      width: 50vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    } */
+    /* #root > div:nth-child(2) > div {
+      width: 30vw;
+      height: 10rem;
+      display: flex;
+    } */
+    /* #root > div:nth-child(2) > div > div {
+      width: 30vw;
+      height: 70%;
+      align-self: flex-end;
+      border-top: 1px solid black;
+      display: flex;
+      align-items: flex-end;
+      font-size: 0.7rem;
+      line-height: 15px;
+      text-align: justify;
+    } */
+    /* #root > div:nth-child(2) > div > div > p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
+    } */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div> <!-- RETURN -->
+      <div></div>
+      <div><div>R</div></div>
+      <div><div>E</div></div>
+      <div><div>T</div></div>
+      <div><div>U</div></div>
+      <div><div>R</div></div>
+      <div><div>N</div></div>
+    </div>
+    <div> <!-- TEXT -->
+      <div> <!-- 가운데 전체 박스 -->
+        <div> <!-- TEXT 박스 -->
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolor dicta quasi ducimus explicabo, exercitationem magnam tempore excepturi molestiae, alias cupiditate animi dolore aperiam. Necessitatibus quod ut voluptas aperiam repudiandae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, saepe? Autem culpa neque nulla voluptas ullam architecto atque libero sapiente eligendi! Illo pariatur impedit doloremque ex sequi esse consequatur minima.
+          </p>
+        </d>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+
+    function flexSetting(element, js, ai){
+      element.style.display = 'flex';
+      element.style.justifyContent = js;
+      element.style.alignItems = ai;
+    }
+    function widthAndHeight(element, width, height){
+      element.style.width = width;
+      element.style.height = height;
+    }
+    
+    let root = document.getElementById('root');
+    // console.log(root)
+    widthAndHeight(root, '100vw', '100vh')
+    root.style.display = 'flex';
+    
+    let halfBox = document.querySelectorAll('#root > div');
+    // console.log(halfBox)
+    let leftHalfBox = halfBox[0];
+    // console.log(leftHalfBox)
+    let rightHalfBox = halfBox[1];
+    // console.log(rightHalfBox)
+    widthAndHeight(leftHalfBox, '60vw', '100vh');
+    leftHalfBox.style.display = 'flex';
+
+    // console.log(leftHalfBox.children);
+    let leftLineBox = leftHalfBox.children;
+    let zIndex = leftLineBox.length;
+    // console.log(leftLineBox)
+    for(let i = 0; i < leftLineBox.length; i++){
+      widthAndHeight(leftLineBox[i], '10vw', '100vh');
+      flexSetting(leftLineBox[i], 'center', 'center');
+      leftLineBox[i].style.fontWeight = 500;
+      leftLineBox[i].style.fontSize = '12rem';
+      leftLineBox[i].style.position = 'relative';
+      leftLineBox[i].style.backgroundColor = 'rgb(' + 40*(i+1) + ','  + 40*(i+1) + ','  + 40*(i+1) + ')';
+      leftLineBox[i].style.zIndex = zIndex-i;
+    }
+
+    // console.log(leftLineBox[0].children);
+    for(let i = 1; i < leftLineBox.length; i++) {
+      leftLineBox[i].children[0].style.position = 'relative';
+      leftLineBox[i].children[0].style.right = '3vw';
+    }
+
+    widthAndHeight(rightHalfBox, '40vw', '100vh');
+    // console.log(rightHalfBox);
+    flexSetting(rightHalfBox, 'flex-start', 'center');
+
+    let textCenterBox = rightHalfBox.children[0];
+    // console.log(textCenterBox)
+    widthAndHeight(textCenterBox, '30vw', '10rem');
+    textCenterBox.style.display = 'flex';
+
+    let textBorderBox = textCenterBox.children[0];
+    // console.log(textBorderBox)
+    widthAndHeight(textBorderBox, '30vw', '70%');
+    textBorderBox.style.alignSelf = 'flex-end';
+    textBorderBox.style.borderTop = '1px solid black';
+    flexSetting(textBorderBox, 'flex-start', 'flex-end');
+    textBorderBox.style.fontSize = '0.7rem';
+    textBorderBox.style.lineHeight = '15px';
+    textBorderBox.style.textAlign = 'justify';
+
+
+    let pTagLorem = textBorderBox.children[0];
+    // console.log(pTagLorem)
+    pTagLorem.style.display = '-webkit-box';
+    pTagLorem.style.webkitBoxOrient = 'vertical';
+    pTagLorem.style.webkitLineClamp = '4';
+    pTagLorem.style.overflow = 'hidden';
+
+    let count = 0;
+    pTagLorem.addEventListener('click', () => {
+      // console.log('hello')
+      if(count === 0) {
+        rightHalfBox.style.display = 'none';
+        widthAndHeight(leftHalfBox, '100vw', '100vh');
+        for(let i = 0; i < leftLineBox.length; i++){
+          leftLineBox[i].style.width = 100/7 + 'vw';
+          count = 1;
+        }
+      }
+    })
+      
+      leftHalfBox.addEventListener('click', () => {
+        if(count === 1){
+          count = 0;
+          rightHalfBox.style.display = 'flex';
+          widthAndHeight(leftHalfBox, '60vw', '100vh');
+          for(let i = 0; i < leftLineBox.length; i++){
+            widthAndHeight(leftLineBox[i], '10vw', '100vh');
+          }
+        }
+      })
+  </script>
+
+  
+</body>
+</html>

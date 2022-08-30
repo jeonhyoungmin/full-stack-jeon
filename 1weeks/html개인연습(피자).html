@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습하기</title>
+</head>
+
+
+<body>
+  https://velog.io/@layssingcar/HTML-%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C
+  <p>고객명 : <input></p>
+  <p>전화번호 : <input></p>
+  <p>E-mail : <input></p>
+  <p>
+    <div>피자선택 :
+        <select name="pizza"> 
+          <option value="none">피자를 선택해주세요</option>
+          <option value="pe">페퍼로니</option>
+          <option value="bul">불고기</option>
+          <option value="pot">감자</option>
+        </select>
+    </div>
+  </p>
+  <fieldset>
+    <legend>피자 사이즈</legend>
+    <input type="radio" name="size" value="S">Small<br><br>
+    <input type="radio" name="size" value="M">Medium<br><br>
+    <input type="radio" name="size" value="L">Large<br><br>
+  </fieldset>
+  <fieldset>
+    <legend>토핑 선택</legend>
+    <input type="radio" name="topping" value="bacon">베이컨<br><br>
+    <input type="radio" name="topping" value="cheese">치즈<br><br>
+    <input type="radio" name="topping" value="onion">양파<br><br>
+    <input type="radio" name="topping" value="mushroom">양파<br><br>
+  </fieldset>
+  <p>희망배송시간 : 
+    <input type="time"><br><br>
+  </p>
+  <p>
+    배송시 요청사항:
+    <textarea rows="4" cols="20" style="color:green"></textarea>
+  </p>
+  <button>주문하기</button>
+
+
+
+
+
+  <br><br><br><br><br><br>
+
+
+
+
+
+  <h1>회원가입</h1>
+  <fieldset>
+    <legend>필수 입력 사항</legend>
+    <table>
+      <tr>
+        <th>ID</th>
+        <td><input type="text" maxlength="10" placeholder="아이디 10글자 이내"></td>
+        <td><button>중복 확인</button></td>
+      </tr>
+      <tr>
+        <th>비밀번호</th>
+        <td colspan="2">
+          <input type="password" size="30" placeholder="영문, 숫자, 특수문자 포함 8자 이상">
+        </td>
+      </tr>
+      <tr>
+        <th>비밀번호 확인</th>
+        <td colspan="2"><input type="password" size="30"></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><input type="text"></td>
+        <td>
+          <select name="domain">
+            <option value="none">직접입력&nbsp;&nbsp;&nbsp;&nbsp;</option>
+            <option value="naver.com">naver.com</option>
+            <option value="google.com">google.com</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+  
+  <fieldset>
+    <legend>추가 정보</legend>
+    <label for="profile">프로필 사진</label> 
+    <input type="file" name="profile" id="profile">
+    <br><br>
+
+    <label>성별: </label>
+    <input type="radio" name="gender" value="M">남자
+    <input type="radio" name="gender" value="F">여자
+    <br><br>
+
+    <label>생년월일: </label>
+    <input type="date">
+    <br><br>
+
+    <label>취미</label>
+    <br>
+    <input type="checkbox" name="hobby" value="baseball">야구
+    <input type="checkbox" name="hobby" value="basketball">농구
+    <input type="checkbox" name="hobby" value="soccer">축구
+    <br>
+    <input type="checkbox" name="hobby" value="study">공부
+    <input type="checkbox" name="hobby" value="music">음악감상
+    <br>
+    <input type="checkbox" name="hobby" value="etc">기타
+    <input type="text">
+    <br><br>
+
+    <label>자기소개</label>
+    <br>
+    <textarea rows="10" cols="80" style="resize:none"></textarea>
+  </fieldset><br>
+  <button>회원가입</button>
+  <button type="reset">다시입력</button>
+  <button>이전으로</button>
+</body>
+</html>

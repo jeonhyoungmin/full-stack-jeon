@@ -1,0 +1,116 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body > div {
+  width: 100vw;
+  height: 100vh;
+
+  & > header {
+    width: 100vw;
+    height: 10vh;
+    > nav {
+      width: inherit;
+      height: inherit;
+      background-color: grey;
+    }
+  }
+
+
+  & > main {
+    width: 100vw;
+    height: 80vh;
+    background-color: rgb(235, 235, 235);
+    opacity: 0.5;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > div:nth-child(1) {
+      width: 70vw;
+      height: 70vh;
+      background-color: rgb(250, 220, 225);
+      position: absolute;
+      z-index: 1;
+    }
+
+    & > div:nth-child(2) {
+      width: 80vw;
+      height: 60vh;
+      background-color: rgb(247, 146, 146);
+      opacity: 0.8;
+      position: absolute;
+      z-index: 2;
+      left: 20vw;
+      display: flex;
+      justify-content: space-between;
+
+      & > div:nth-child(2) {
+        width: 30vw;
+        height: inherit;
+        background-color: rgb(247, 146, 146);
+      }
+      & > div:nth-child(1) {
+        width: 50vw;
+        height: inherit;
+        // background-color: blue;
+        display: flex;
+        & > div:nth-child(1) {
+          width: 25vw;
+          height: inherit;
+          // background-color: green;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          & > div:nth-child(1) {
+            width: 15vw;
+            height: 10vh;
+            background-color: cadetblue;  
+            border-radius: 10px;
+            position: absolute;
+            right: 62vw;
+            bottom: 52vh;
+            z-index: 1;
+          }
+          & > div:nth-child(2) {
+            width: 15vw;
+            height: 10vh;
+            background-color: cadetblue;
+            border-radius: 10px;
+            position: absolute;
+            right: 62vw;
+            top: 52vh;
+            z-index: 1;
+
+          }
+        }
+        & > div:nth-child(2) {
+          width: 25vw;
+          height: inherit;
+          // background-color: greenyellow;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          & > div:nth-child(1) {
+            width: 15vw;
+            height: 50vh;
+            background: red;  
+            opacity: 0.5;
+            position: absolute;
+            right: 50vw;
+          }
+          & > div:nth-child(2) {
+            width: 15vw;
+            height: 5vh;
+            background-color: cadetblue;
+            border-radius: 10px;
+            position: absolute;
+            right: 37vw;
+            top: 45vh;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}

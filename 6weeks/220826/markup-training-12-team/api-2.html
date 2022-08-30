@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const _pokemonForm_URL = `https://pokeapi.co/api/v2/pokemon-form/?offset=0&limit=905`;
+    const formRequest = new XMLHttpRequest();
+      formRequest.open("GET", _pokemonForm_URL);
+      formRequest.responseType = "json";
+      formRequest.send();
+      formRequest.addEventListener('load', () => {
+        const _POKEMONFORM_API = formRequest.response;
+        // 상수 _POKEMON_API 데이터가 사장놈이 가져온 데이터이다.
+        // console.log(_POKEMONFORM_API);
+        // console.log(_POKEMONFORM_API.results[0].url)
+        return _POKEMONFORM_API.results.url
+      });
+
+      console.log(formRequest)
+  </script>
+</body>
+</html>
+<!-- https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png -->

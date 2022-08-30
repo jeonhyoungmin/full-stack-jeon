@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    /* reset */
+    body {margin: 0; height: 0;}
+    body > div {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      /* display: flex; 와 justify-content: center;는 상위에 적용 */
+      align-items: center;
+    }
+
+      /* 중앙 정렬 */
+    .ps-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 입체 박스 */
+    .main-box {
+      width: 90vw;
+      height: 80vh;
+      box-shadow: 1px 1px 5px 1px black;
+      border-radius: 10px;
+      /* margin: auto; 해당 박스에 적용*/
+    }
+
+    /* 입체 박스 안 div */
+    .in-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* margin: 2vh; */
+      width: inherit;
+      height: inherit;
+    }
+
+    /* 상단의 메뉴 박스 */
+    .menu-box {
+      width: 85vw;
+      height: 7vh;
+      background-color: grey;
+    }
+
+    /* 메인 박스 */
+    .main-box {
+      width: 85vw;
+      height: 65vh;
+    }
+
+    /* 메인의 aside를 묶은 div 값 */
+    .left-box {
+      width: 30vw;
+      height: 50vh;
+      /* background-color: grey; */
+      /* display: block; */
+    }
+    .right-box {
+      width: 50%;
+      height: 60%;
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <!-- 새로운 파일로 다시 하는 이유 -->
+  <!-- in-box <div> 를 모든 박스의 정렬 기준으로 사용하려고 하니 중구난방이 됨 -->
+  <!-- 부모 태그 재설정과 자식 태그들의 구분, 새로운 정렬 방법 찾기를 위해 새로운 파일로 이동 -->
+  <div>
+    <!-- 입체박스 div -->
+    <div class="main-box">
+      <!-- 입체 박스 안 div -->
+      <div class="in-box">
+        <!-- 상단의 메뉴 박스 -->
+        <header class="menu-box">
+          <nav>
+          </nav>
+        </header>
+        <main>
+          <!-- aside 두 개를 div로 묶기, 정렬와 유지보수를 위해 -->
+          
+          <div class="left-box">
+            <aside style="background-color:grey; width:30px; height:30px;"></aside>
+            <aside style="background-color:grey; width:30px; height:30px;"></aside>
+          </div>
+          <section class="right-box">
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

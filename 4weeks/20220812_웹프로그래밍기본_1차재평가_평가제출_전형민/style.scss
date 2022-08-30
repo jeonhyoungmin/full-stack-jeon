@@ -1,0 +1,1416 @@
+$color-1: #122023;
+$color-2: #FFF7E1;
+$color-3: #F7F9FA;
+$color-4: #19CE60;
+$color-5: #DAE1E6;
+
+$font-size-64: 4rem;
+$font-size-48: 3rem;
+$font-size-32: 2rem;
+$font-size-16: 1rem;
+$font-size-12: 0.75rem;
+$font-size-10: 0.625rem;
+$font-size-8: 0.5rem;
+$font-size-6: 0.375rem;
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin flex-setting($jc, $ai, $fd:row) {
+  display: flex;  
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+@mixin font-size-weight-color($size, $weight, $color:$color-1) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin webkit-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {font-size: 16px;}
+
+
+
+// MacBook
+@media (min-width: 1025px) {
+  body > div { /* 전체 묶음 */
+    @include width-height(100vw, 100vh);
+    @include flex-setting(flex-start, flex-start);
+    & > div { /* 좌측 사이드바 */
+      @include width-height(5vw, 100vh);
+      @include flex-setting(center, center);
+      background-color: $color-4;
+      & > div { /* invisible-중앙 정렬용 */
+        @include width-height(1.5vw, 70vh);
+        @include flex-setting(flex-start, flex-end);
+        background-color: $color-4;
+        & > div { /* 점 5개 묶음용 */
+          @include width-height(inherit, 15vh);
+          @include flex-setting(space-around, flex-start, column);
+          & > div { /* 점 5개 */
+            @include width-height(inherit, 2.5vh);
+            background-color: $color-2;
+          }
+        }
+      }
+    }
+    & > main {
+      @include width-height(95vw, 100vh);
+      @include flex-setting(center, center);
+      background-color: #19CE6033;
+      & > section {
+        @include width-height(70vw, 60vh);
+        @include flex-setting(center, center);
+        & > div:nth-child(1) { /* MacBook의 중앙 왼쪽 상단 묶음 박스, 다른 기기들의 상단 묶음 박스 */
+          @include width-height(35vw, 60vh);
+          @include flex-setting(space-between, flex-start, column);
+          position: relative;
+          right: 2vw;
+          bottom: 15vh;
+          & > div:nth-child(1) { /* Waver logo 박스 */
+            @include width-height(35vw, 6vh);
+            @include flex-setting(flex-end, flex-start);
+            & > div { /* invisible - waver와 happy 묶음 박스 */
+              @include width-height(17.5vw, 6vh);
+              @include flex-setting(space-between, flex-end);
+              & > div:nth-child(1) { /* Waver */
+                @include font-size-weight-color($font-size-32, 800, $color-4);
+              }
+              & > div:nth-child(2) { /* Happy 중앙 정렬 용*/
+                @include width-height(5vw, 2.5vh);
+                @include font-size-weight-color($font-size-10, 600, $color-3);
+                @include flex-setting(center, center);
+                position: relative;
+                bottom: 1vh;
+                background-color: $color-4;
+                border-radius: 8px;
+              }
+            }
+          }
+          & > div:nth-child(2) { /* 로그인 전체 묶음 박스*/
+            @include width-height(inherit, 33vh);
+            & > div:nth-child(1) { /* ID 로그인, 일회용 번호 묶음 박스 */
+              @include width-height(inherit, 6vh);
+              @include flex-setting(center, center);
+              & > div:nth-child(1) { /* ID 로그인 중앙 정렬용*/
+                @include width-height(17.5vw, 6vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-10, 500, $color-3);
+                background-color: $color-4;
+                border-radius: 5px 0 0 0;
+              }
+              & > div:nth-child(2) { /* 일회용 번호 중앙 정렬용*/
+                @include width-height(17.5vw, 6vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-10, 500, $color-1);
+                background-color: $color-5;
+                border-radius: 0 5px 0 0;
+              }
+            }
+            & > div:nth-child(2) { /* ID 인풋, Password 인풋, 로그인 전체 묶음 박스 */
+              @include width-height(inherit, 27vh);
+              @include flex-setting(center, center);
+              box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+              background-color: $color-3;
+              & > div { /* ID, password, 로그인 가운데 정렬용 박스 */
+                @include width-height(25vw, 20vh);
+                @include flex-setting(center, center, column);
+                & > div:nth-child(1) { /* id, password, forgotpassword? 묶음 박스 */
+                  @include width-height(inherit, 11vh);
+                  @include flex-setting(space-between, flex-end, column);
+                  & > input { /* ID, PASSWORD 인풋 박스 */
+                    @include width-height(inherit, 4vh);
+                    background-color: $color-5;
+                    border-style: none;
+                    border-radius: 5px;
+                    &::placeholder {
+                      @include font-size-weight-color($font-size-10, 500, #FFFFFF);
+                    }
+                  }
+                  & > div:nth-child(3) { /* Forgot Password? */
+                    @include font-size-weight-color($font-size-8, 400, $color-4)
+                  }
+                }
+                & > div:nth-child(2) { /* 로그인, ip, 바 묶음 박스 */
+                  @include width-height(inherit, 7vh);
+                  @include flex-setting(space-between, flex-end);
+                  & > button { /* 로그인 button */
+                    @include width-height(15vw, 5vh);
+                    @include font-size-weight-color($font-size-16, 700, $color-3);
+                    background-color: $color-4;
+                    border-style: none;
+                    border-radius: 5px;
+                  }
+                  & > div:nth-child(2) { /* IP Security */
+                    @include font-size-weight-color($font-size-8, 400, $color-1);
+                  }
+                  & > div:nth-child(3) { /* bar */
+                    @include width-height(4vw, 2vh);
+                    @include flex-setting(flex-end, center);
+                    background-color: $color-4;
+                    border-radius: 8px;
+                    & > div { /* bar 안에 있는 동그라미 */
+                      @include width-height(1vw, 1.3vh);
+                      position: relative;
+                      right: 0.2vw;
+                      background-color: $color-3;
+                      border-radius: 10px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          & > div:nth-child(3) { /* 증시 박스 */
+            @include width-height(inherit, 6vh);
+            @include flex-setting(space-between, flex-start);
+            background-color: $color-4;
+            border-radius: 5px;
+            & > div:nth-child(1) { /* "증시" 중앙 정렬용 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              @include font-size-weight-color($font-size-12, 600, $color-3);
+            }
+            & > div:nth-child(2) { /* KOSDAQ 네모박스 203332.124 묶음 박스 */
+              @include width-height(25vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* KOSDAQ 네모박스 203332.124 justify-content: space-between 정렬용 */
+                @include width-height(10vw, 2vh);
+                @include flex-setting(space-between, center);
+                @include font-size-weight-color($font-size-10, 400, $color-3);
+                & > div:nth-child(2) { /* 네모박스 */
+                  @include width-height(0.7vw, 1vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+            & > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* 밑줄 세 개 중앙 정렬용 */
+                @include width-height(3vw, 2vh);
+                @include flex-setting(space-between, flex-start, column);
+                & > div { /* 밑줄 border-radius 일괄 처리 */
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(1), div:nth-child(3) { /* 밑줄  */
+                  @include width-height(1.8vw, 0.4vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(2) { /* 밑줄 */
+                  @include width-height(3vw, 0.4vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(3) { /* 밑줄 */
+                  @include width-height(2.3vw, 0.4vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+          }
+          & > div:nth-child(4) { /* 날씨 박스 */
+            @include width-height(inherit, 6vh);
+            @include flex-setting(space-between, flex-start);
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div { /* "날씨" 중앙 정렬용 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              @include font-size-weight-color($font-size-12, 600, $color-1);
+            }
+            & > div:nth-child(2) { /* 비 온뒤 땅이 굳을 예정 박스 */
+              @include width-height(25vw, inherit);
+              @include flex-setting(center, center);
+              & > div {
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+              }
+            }
+            & > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* 밑줄 세 개 중앙 정렬용 */
+                @include width-height(3vw, 2vh);
+                @include flex-setting(space-between, flex-start, column);
+                & > div { /* 밑줄 border-radius 일괄 처리 */
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(1), div:nth-child(3) { /* 밑줄  */
+                  @include width-height(3vw, 0.4vh);
+                  background-color: $color-4;
+                }
+                & > div:nth-child(2) { /* 밑줄 */
+                  @include width-height(1.8vw, 0.4vh);
+                  background-color: $color-4;
+                }
+              }
+            }
+          }
+        }
+
+
+
+
+        & > div:nth-child(2) { /* MacBook의 중앙 오른쪽 하단 묶음 박스, 다른 기기들의 하단 묶음 박스 */
+          @include width-height(35vw, 50vh);
+          position: relative;
+          top: 15vh;
+          & > div:nth-child(1) { /* 겹치는 박스 중 z-index:1 */
+            @include width-height(inherit, 37vh);
+            @include flex-setting(center, center);
+            filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+            position: relative;
+            z-index: 1;
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div {
+              @include width-height(32vw, 32vh);
+              & > div:nth-child(1) { /* 뉴스 */
+                @include width-height(inherit, 3vh);
+                @include font-size-weight-color($font-size-12, 600, $color-1);
+              }
+              & > div:nth-child(2) { /* 초록색 박스 */
+                @include width-height(inherit, 16vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-48, 400, $color-3);
+                background-color: $color-4;
+                border-radius: 5px;
+              }
+              & > div:nth-child(3) { /* 네모 세 개 묶음 박스 */
+                @include width-height(inherit, 3vh);
+                @include flex-setting(center, center);
+                & > div { /* 네모 세 개 justify-content:space-between 용 */
+                  @include width-height(3vw, 3vh);
+                  @include flex-setting(space-between, center);
+                  & > div { /* 네모 세 개 */
+                    @include width-height(0.7vw, 1vh);
+                    background-color: $color-5;
+                  }
+                  & > div:nth-child(1) {
+                    background-color: $color-4;
+                  }
+                }
+              }
+              & > div:nth-child(4) { /* 충격, >, 피그마, 결국 쓸모.. 묶음 상자 */
+                @include width-height(inherit, 4vh);
+                @include flex-setting(flex-start, center);
+                & > div:nth-child(1) { /* 충격 속보 정렬용 */
+                  @include width-height(7vw, 4vh);
+                  @include flex-setting(flex-start, center);
+                  @include font-size-weight-color($font-size-16, 400, $color-1);
+                  & > div {
+                    @include webkit-clamp-1();
+                  }
+                }
+                & > div:nth-child(2) { /* >, 피그마,... 묶음 상자 */
+                  @include width-height(18vw, 4vh);
+                  @include flex-setting(space-between, center);
+                  & > div:nth-child(1) { /* > 중앙 정렬용*/
+                    @include width-height(4vw, 4vh);
+                    @include flex-setting(center, center);
+                    & > div { /* > */
+                      @include width-height(15px, 15px);
+                      border-top: 4px solid #37A0F4;;
+                      border-right: 4px solid #37A0F4;;
+                      border-radius: 3px;
+                      transform: rotate(45deg);
+                    }
+                  }
+                  & > div:nth-child(2) { /* 피그마, 결국 쓸모.. */
+                    @include flex-setting(center, center);
+                    & > div {
+                      @include font-size-weight-color($font-size-12, 400, $color-1);
+                      @include webkit-clamp-1();
+                      & > span { /* 피그마 */
+                        color: $color-4;
+                      }
+                    }
+                  }
+                }
+                & > div:nth-child(3) { /* invisible - 정렬용 iphone(display:none;) */
+                  @include width-height(10vw, 4vh);
+                }
+              }
+              & > div:nth-child(5) { /* lorem */
+                @include width-height(inherit, 6vh);
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+              }
+            }
+          }
+
+
+
+
+          & > div:nth-child(2) { /* 겹치는 박스 중 z-index:2 */
+            @include width-height(inherit, 30vh);
+            @include flex-setting(flex-start, flex-end);
+            position: relative;
+            bottom: 16vh;
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div { /* 글씨가 보이는 곳, 아래 정렬용 박스 */
+              @include width-height(inherit, 12vh);
+              @include flex-setting(center, center);
+              & > div { /* 전체 중앙 정렬 묶음 박스 */
+                @include width-height(32vw, 10vh);
+                & > div:nth-child(1) { /* 첫 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 첫 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Creators 박스 */
+                    @include width-height(7vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* 크리에이터 박스 */
+                    @include width-height(7vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                  }
+                  & > div:nth-child(4) { /* 스쿨비지니스 박스 */
+                    @include width-height(7vw, 3vh);
+                  }
+                }
+                & > div:nth-child(2) { /* 두 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 두 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Partners 박스 */
+                    @include width-height(7vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* SME 풀케어 시스템 박스 */
+                    @include width-height(7vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                    @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* 비즈니스 박스 */
+                    @include width-height(7vw, 3vh);
+                  }
+                  & > div:nth-child(5) { /* 스토어 개설 박스 */
+                    @include width-height(8vw, 3vh);
+                  }
+                }
+                & > div:nth-child(3) { /* 세 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 세 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Developers 박스 */
+                    @include width-height(7vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* 네이버 개발자 센터 박스 */
+                    @include width-height(7vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                    @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* Open API 박스 */
+                    @include width-height(7vw, 3vh);
+                    & > div { /* Open API 초록 박스, 중앙 정렬용 */
+                      @include width-height(6vw, 2vh);
+                      @include flex-setting(center, center);
+                      background-color: $color-4;
+                      border-radius: 10.5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// iPad
+@media (min-width: 429px) and (max-width: 1024px) {
+  body > div { /* 전체 묶음 */
+    @include width-height(100vw, 125vh);
+    @include flex-setting(flex-start, flex-start);
+    & > div { /* 좌측 사이드바 */
+      @include width-height(5vw, 125vh);
+      @include flex-setting(center, center);
+      background-color: $color-4;
+      & > div { /* invisible-중앙 정렬용 */
+        @include width-height(1vw, 80vh);
+        @include flex-setting(flex-start, flex-end);
+        background-color: $color-4;
+        & > div { /* 점 5개 묶음용 */
+          @include width-height(inherit, 70vh);
+          @include flex-setting(space-between, flex-start, column);
+          & > div { /* 점 5개 */
+            @include width-height(inherit, 1vh);
+            border-radius: 10.5px;
+            background-color: $color-2;
+          }
+        }
+      }
+    }
+    & > main {
+      @include width-height(95vw, 125vh);
+      @include flex-setting(center, center);
+      background-color: #F5F5F5;
+      & > section {
+        @include width-height(80vw, 110vh);
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) { /* MacBook의 중앙 왼쪽 상단 묶음 박스, 다른 기기들의 상단 묶음 박스 */
+          @include width-height(50vw, 60vh);
+          @include flex-setting(space-between, center, column);
+          & > div:nth-child(1) { /* Waver logo 박스 */
+            @include width-height(20vw, 8vh);
+            @include flex-setting(center, flex-end);
+            & > div { /* invisible - waver와 happy 묶음 박스 */
+              @include width-height(50vw, 6vh);
+              @include flex-setting(space-between, flex-end);
+              position: relative;
+              left: 5vw;
+              & > div:nth-child(1) { /* Waver */
+                @include font-size-weight-color($font-size-32, 800, $color-4);
+              }
+              & > div:nth-child(2) { /* Happy 중앙 정렬 용*/
+                @include width-height(5vw, 2.5vh);
+                @include font-size-weight-color($font-size-10, 600, $color-3);
+                @include flex-setting(center, center);
+                position: relative;
+                bottom: 1vh;
+                background-color: $color-4;
+                border-radius: 8px;
+              }
+            }
+          }
+          & > div:nth-child(2) { /* 로그인 전체 묶음 박스*/
+            @include width-height(inherit, 30vh);
+            & > div:nth-child(1) { /* ID 로그인, 일회용 번호 묶음 박스 */
+              @include width-height(inherit, 6vh);
+              @include flex-setting(center, center);
+              & > div:nth-child(1) { /* ID 로그인 중앙 정렬용*/
+                @include width-height(25vw, 6vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-10, 500, $color-3);
+                background-color: $color-4;
+                border-radius: 5px 0 0 0;
+              }
+              & > div:nth-child(2) { /* 일회용 번호 중앙 정렬용*/
+                @include width-height(25vw, 6vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-10, 500, $color-1);
+                background-color: $color-5;
+                border-radius: 0 5px 0 0;
+              }
+            }
+            & > div:nth-child(2) { /* ID 인풋, Password 인풋, 로그인 전체 묶음 박스 */
+              @include width-height(inherit, 23vh);
+              @include flex-setting(center, center);
+              box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+              background-color: $color-3;
+              & > div { /* ID, password, 로그인 가운데 정렬용 박스 */
+                @include width-height(30vw, 20vh);
+                @include flex-setting(center, center, column);
+                & > div:nth-child(1) { /* id, password, forgotpassword? 묶음 박스 */
+                  @include width-height(inherit, 11vh);
+                  @include flex-setting(space-between, flex-end, column);
+                  & > input { /* ID, PASSWORD 인풋 박스 */
+                    @include width-height(inherit, 4vh);
+                    background-color: $color-5;
+                    border-style: none;
+                    border-radius: 5px;
+                    &::placeholder {
+                      @include font-size-weight-color($font-size-10, 500, #FFFFFF);
+                    }
+                  }
+                  & > div:nth-child(3) { /* Forgot Password? */
+                    @include font-size-weight-color($font-size-8, 400, $color-4)
+                  }
+                }
+                & > div:nth-child(2) { /* 로그인, ip, 바 묶음 박스 */
+                  @include width-height(inherit, 7vh);
+                  @include flex-setting(space-between, flex-end);
+                  & > button { /* 로그인 button */
+                    @include width-height(20vw, 5vh);
+                    @include font-size-weight-color($font-size-16, 700, $color-3);
+                    background-color: $color-4;
+                    border-style: none;
+                    border-radius: 5px;
+                  }
+                  & > div:nth-child(2) { /* IP Security */
+                    @include font-size-weight-color($font-size-8, 400, $color-1);
+                  }
+                  & > div:nth-child(3) { /* bar */
+                    @include width-height(4vw, 2vh);
+                    @include flex-setting(flex-end, center);
+                    background-color: $color-4;
+                    border-radius: 8px;
+                    & > div { /* bar 안에 있는 동그라미 */
+                      @include width-height(1vw, 1.3vh);
+                      position: relative;
+                      right: 0.2vw;
+                      background-color: $color-3;
+                      border-radius: 10px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          & > div:nth-child(3) { /* 증시 박스 */
+            @include width-height(inherit, 6vh);
+            @include flex-setting(space-between, flex-start);
+            background-color: $color-4;
+            border-radius: 5px;
+            filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+            & > div:nth-child(1) { /* "증시" 중앙 정렬용 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              @include font-size-weight-color($font-size-12, 600, $color-3);
+            }
+            & > div:nth-child(2) { /* KOSDAQ 네모박스 203332.124 묶음 박스 */
+              @include width-height(25vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* KOSDAQ 네모박스 203332.124 justify-content: space-between 정렬용 */
+                @include width-height(15vw, 2vh);
+                @include flex-setting(space-between, center);
+                @include font-size-weight-color($font-size-10, 400, $color-3);
+                & > div:nth-child(2) { /* 네모박스 */
+                  @include width-height(1vw, 1.1vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+            & > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* 밑줄 세 개 중앙 정렬용 */
+                @include width-height(3vw, 2vh);
+                @include flex-setting(space-between, flex-start, column);
+                & > div { /* 밑줄 border-radius 일괄 처리 */
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(1), div:nth-child(3) { /* 밑줄  */
+                  @include width-height(1.8vw, 0.4vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(2) { /* 밑줄 */
+                  @include width-height(3vw, 0.4vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(3) { /* 밑줄 */
+                  @include width-height(2.3vw, 0.4vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+          }
+          & > div:nth-child(4) { /* 날씨 박스 */
+            @include width-height(inherit, 6vh);
+            @include flex-setting(space-between, flex-start);
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div { /* "날씨" 중앙 정렬용 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              @include font-size-weight-color($font-size-12, 600, $color-1);
+            }
+            & > div:nth-child(2) { /* 비 온뒤 땅이 굳을 예정 박스 */
+              @include width-height(25vw, inherit);
+              @include flex-setting(center, center);
+              & > div {
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+              }
+            }
+            & > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+              @include width-height(5vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* 밑줄 세 개 중앙 정렬용 */
+                @include width-height(3vw, 2vh);
+                @include flex-setting(space-between, flex-start, column);
+                & > div { /* 밑줄 border-radius 일괄 처리 */
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(1), div:nth-child(3) { /* 밑줄  */
+                  @include width-height(3vw, 0.4vh);
+                  background-color: $color-4;
+                }
+                & > div:nth-child(2) { /* 밑줄 */
+                  @include width-height(1.8vw, 0.4vh);
+                  background-color: $color-4;
+                }
+              }
+            }
+          }
+        }
+
+
+
+
+
+        & > div:nth-child(2) { /* MacBook의 중앙 오른쪽 하단 묶음 박스, 다른 기기들의 하단 묶음 박스 */
+          @include width-height(50vw, 50vh);
+          position: relative;
+          top: 3vh;
+          & > div:nth-child(1) { /* 겹치는 박스 중 z-index:1 */
+            @include width-height(inherit, 37vh);
+            @include flex-setting(center, center);
+            filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+            position: relative;
+            z-index: 1;
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div {
+              @include width-height(45vw, 32vh);
+              & > div:nth-child(1) { /* 뉴스 */
+                @include width-height(inherit, 3vh);
+                @include font-size-weight-color($font-size-12, 600, $color-1);
+              }
+              & > div:nth-child(2) { /* 초록색 박스 */
+                @include width-height(inherit, 16vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-48, 400, $color-3);
+                background-color: $color-4;
+                border-radius: 5px;
+              }
+              & > div:nth-child(3) { /* 네모 세 개 묶음 박스 */
+                @include width-height(inherit, 3vh);
+                @include flex-setting(center, center);
+                & > div { /* 네모 세 개 justify-content:space-between 용 */
+                  @include width-height(5vw, 3vh);
+                  @include flex-setting(space-between, center);
+                  & > div { /* 네모 세 개 */
+                    @include width-height(1vw, 1vh);
+                    background-color: $color-5;
+                  }
+                  & > div:nth-child(1) {
+                    background-color: $color-4;
+                  }
+                }
+              }
+              & > div:nth-child(4) { /* 충격, >, 피그마, 결국 쓸모.. 묶음 상자 */
+                @include width-height(inherit, 4vh);
+                @include flex-setting(flex-start, center);
+                & > div:nth-child(1) { /* 충격 속보 정렬용 */
+                  @include width-height(9vw, 4vh);
+                  @include flex-setting(flex-start, center);
+                  @include font-size-weight-color($font-size-16, 400, $color-1);
+                  & > div {
+                    @include webkit-clamp-1();
+                  }
+                }
+                & > div:nth-child(2) { /* >, 피그마,... 묶음 상자 */
+                  @include width-height(25vw, 4vh);
+                  @include flex-setting(space-between, center);
+                  & > div:nth-child(1) { /* > 중앙 정렬용*/
+                    @include width-height(4vw, 4vh);
+                    @include flex-setting(center, center);
+                    & > div { /* > */
+                      @include width-height(10px, 10px);
+                      border-top: 4px solid #37A0F4;;
+                      border-right: 4px solid #37A0F4;;
+                      border-radius: 3px;
+                      transform: rotate(45deg);
+                    }
+                  }
+                  & > div:nth-child(2) { /* 피그마, 결국 쓸모.. */
+                    @include flex-setting(center, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                    & > div {
+                      @include font-size-weight-color($font-size-12, 400, $color-1);
+                      & > span { /* 피그마 */
+                        color: $color-4;
+                      }
+                    }
+                  }
+                }
+                & > div:nth-child(3) { /* invisible - 정렬용 iphone(display:none;) */
+                  @include width-height(5vw, 4vh);
+                }
+              }
+              & > div:nth-child(5) { /* lorem */
+                @include width-height(inherit, 6vh);
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+              }
+            }
+          }
+
+
+
+
+          & > div:nth-child(2) { /* 겹치는 박스 중 z-index:2 */
+            @include width-height(inherit, 30vh);
+            @include flex-setting(flex-start, flex-end);
+            position: relative;
+            bottom: 18vh;
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div { /* 글씨가 보이는 곳, 아래 정렬용 박스 */
+              @include width-height(inherit, 12vh);
+              @include flex-setting(center, center);
+              & > div { /* 전체 중앙 정렬 묶음 박스 */
+                @include width-height(45vw, 10vh);
+                & > div:nth-child(1) { /* 첫 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 첫 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Creators 박스 */
+                    @include width-height(9vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* 크리에이터 박스 */
+                    @include width-height(9vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* 스쿨비지니스 박스 */
+                    @include width-height(10vw, 3vh);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                }
+                & > div:nth-child(2) { /* 두 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 두 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Partners 박스 */
+                    @include width-height(9vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* SME 풀케어 시스템 박스 */
+                    @include width-height(9vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* 비즈니스 박스 */
+                    @include width-height(10vw, 3vh);
+                  }
+                  & > div:nth-child(5) { /* 스토어 개설 박스 */
+                    @include width-height(10vw, 3vh);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                }
+                & > div:nth-child(3) { /* 세 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 세 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Developers 박스 */
+                    @include width-height(9vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* 네이버 개발자 센터 박스 */
+                    @include width-height(9vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* Open API 박스 */
+                    @include width-height(10vw, 3vh);
+                    & > div { /* Open API 초록 박스, 중앙 정렬용 */
+                      @include width-height(8vw, 2vh);
+                      @include flex-setting(center, center);
+                      background-color: $color-4;
+                      border-radius: 10.5px;
+                      & > div {
+                        @include webkit-clamp-1();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// iPhone
+@media (max-width: 428px) {
+  body > div { /* 전체 묶음 */
+    @include width-height(100vw, 125vh);
+    @include flex-setting(flex-start, flex-start);
+    & > div { /* 좌측 사이드바 */
+      @include width-height(5vw, 125vh);
+      @include flex-setting(center, center);
+      background-color: $color-4;
+      & > div { /* invisible-중앙 정렬용 */
+        @include width-height(2vw, 70vh);
+        @include flex-setting(flex-start, flex-start);
+        background-color: $color-4;
+        & > div { /* 점 5개 묶음용 */
+          @include width-height(inherit, 15vh);
+          @include flex-setting(space-around, flex-start, column);
+          & > div { /* 점 5개 */
+            @include width-height(inherit, 1.5vh);
+            border-radius: 10.5px;
+            background-color: $color-2;
+          }
+        }
+      }
+    }
+    & > main {
+      @include width-height(95vw, 125vh);
+      @include flex-setting(center, center);
+      background-color: #F5F5F5;
+      & > section {
+        @include width-height(85vw, 110vh);
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) { /* MacBook의 중앙 왼쪽 상단 묶음 박스, 다른 기기들의 상단 묶음 박스 */
+          @include width-height(80vw, 50vh);
+          @include flex-setting(space-between, center, column);
+          position: relative;
+          & > div:nth-child(1) { /* Waver logo 박스 */
+            @include width-height(40vw, 8vh);
+            @include flex-setting(center, flex-end);
+            & > div { /* invisible - waver와 happy 묶음 박스 */
+              @include width-height(80vw, 6vh);
+              @include flex-setting(space-between, flex-end);
+              position: relative;
+              left: 5vw;
+              & > div:nth-child(1) { /* Waver */
+                @include font-size-weight-color($font-size-32, 800, $color-4);
+              }
+              & > div:nth-child(2) { /* Happy 중앙 정렬 용*/
+                @include width-height(10vw, 2vh);
+                @include font-size-weight-color($font-size-10, 600, $color-3);
+                @include flex-setting(center, center);
+                position: relative;
+                bottom: 1vh;
+                left: 17vw;
+                background-color: $color-4;
+                border-radius: 8px;
+              }
+            }
+          }
+          & > div:nth-child(2) { /* 로그인 전체 묶음 박스*/
+            @include width-height(inherit, 30vh);
+            & > div:nth-child(1) { /* ID 로그인, 일회용 번호 묶음 박스 */
+              @include width-height(inherit, 5vh);
+              @include flex-setting(center, center);
+              & > div:nth-child(1) { /* ID 로그인 중앙 정렬용*/
+                @include width-height(40vw, 5vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-10, 500, $color-3);
+                background-color: $color-4;
+                border-radius: 5px 0 0 0;
+              }
+              & > div:nth-child(2) { /* 일회용 번호 중앙 정렬용*/
+                @include width-height(40vw, 5vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-10, 500, $color-1);
+                background-color: $color-5;
+                border-radius: 0 5px 0 0;
+              }
+            }
+            & > div:nth-child(2) { /* ID 인풋, Password 인풋, 로그인 전체 묶음 박스 */
+              @include width-height(inherit, 23vh);
+              @include flex-setting(center, center);
+              box-shadow: 6px 12px 24px rgba(0, 0, 0, 0.1);
+              background-color: $color-3;
+              & > div { /* ID, password, 로그인 가운데 정렬용 박스 */
+                @include width-height(70vw, 20vh);
+                @include flex-setting(center, center, column);
+                & > div:nth-child(1) { /* id, password, forgotpassword? 묶음 박스 */
+                  @include width-height(inherit, 11vh);
+                  @include flex-setting(space-between, flex-end, column);
+                  & > input { /* ID, PASSWORD 인풋 박스 */
+                    @include width-height(inherit, 4vh);
+                    background-color: $color-5;
+                    border-style: none;
+                    border-radius: 5px;
+                    &::placeholder {
+                      @include font-size-weight-color($font-size-10, 500, #FFFFFF);
+                    }
+                  }
+                  & > div:nth-child(3) { /* Forgot Password? */
+                    @include font-size-weight-color($font-size-8, 400, $color-4)
+                  }
+                }
+                & > div:nth-child(2) { /* 로그인, ip, 바 묶음 박스 */
+                  @include width-height(inherit, 7vh);
+                  @include flex-setting(space-between, flex-end);
+                  & > button { /* 로그인 button */
+                    @include width-height(45vw, 5vh);
+                    @include font-size-weight-color($font-size-16, 700, $color-3);
+                    background-color: $color-4;
+                    border-style: none;
+                    border-radius: 5px;
+                  }
+                  & > div:nth-child(2) { /* IP Security */
+                    @include font-size-weight-color($font-size-8, 400, $color-1);
+                  }
+                  & > div:nth-child(3) { /* bar */
+                    @include width-height(10vw, 1.5vh);
+                    @include flex-setting(flex-end, center);
+                    background-color: $color-4;
+                    border-radius: 8px;
+                    & > div { /* bar 안에 있는 동그라미 */
+                      @include width-height(3vw, 1vh);
+                      position: relative;
+                      right: 0.2vw;
+                      background-color: $color-3;
+                      border-radius: 10px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          & > div:nth-child(3) { /* 증시 박스 */
+            @include width-height(inherit, 6vh);
+            @include flex-setting(space-between, flex-start);
+            filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+            background-color: $color-3;
+            border-radius: 5px;
+            position: relative;
+            z-index: 1;
+            & > div:nth-child(1) { /* "증시" 중앙 정렬용 */
+              @include width-height(20vw, inherit);
+              @include flex-setting(center, center);
+              @include font-size-weight-color($font-size-12, 600, $color-1);
+            }
+            & > div:nth-child(2) { /* KOSDAQ 네모박스 203332.124 묶음 박스 */
+              @include width-height(40vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* KOSDAQ 네모박스 203332.124 justify-content: space-between 정렬용 */
+                @include width-height(27vw, 2vh);
+                @include flex-setting(space-between, center);
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+                & > div {
+                  @include webkit-clamp-1();
+                }
+                & > div:nth-child(2) { /* 네모박스 */
+                  @include width-height(2vw, 1vh);
+                  background-color: $color-4;
+                }
+              }
+            }
+            & > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+              @include width-height(20vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* 밑줄 세 개 중앙 정렬용 */
+                @include width-height(5vw, 2vh);
+                @include flex-setting(space-between, flex-start, column);
+                & > div { /* 밑줄 border-radius 일괄 처리 */
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(1){ /* 밑줄  */
+                  @include width-height(5vw, 0.4vh);
+                  background-color: $color-4;
+                }
+                & > div:nth-child(2) { /* 밑줄 */
+                  @include width-height(8vw, 0.4vh);
+                  background-color: $color-4;
+                }
+                & > div:nth-child(3) { /* 밑줄 */
+                  @include width-height(6vw, 0.4vh);
+                  background-color: $color-4;
+                }
+              }
+            }
+          }
+          & > div:nth-child(4) { /* 날씨 박스 */
+            @include width-height(80vw, 6vh);
+            @include flex-setting(space-between, flex-start);
+            background-color: $color-3;
+            border-radius: 5px;
+            position: relative;
+            bottom: 1.8vh;
+            left: 3vw;
+            & > div { /* "날씨" 중앙 정렬용 */
+              @include width-height(20vw, inherit);
+              @include flex-setting(center, center);
+              @include font-size-weight-color($font-size-12, 600, $color-1);
+            }
+            & > div:nth-child(2) { /* 비 온뒤 땅이 굳을 예정 박스 */
+              @include width-height(40vw, inherit);
+              @include flex-setting(center, center);
+              & > div {
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+                @include webkit-clamp-1();
+              }
+            }
+            & > div:nth-child(3) { /* 밑줄 세 개 묶음 박스 */
+              @include width-height(20vw, inherit);
+              @include flex-setting(center, center);
+              & > div { /* 밑줄 세 개 중앙 정렬용 */
+                @include width-height(5vw, 2vh);
+                @include flex-setting(space-between, flex-start, column);
+                & > div { /* 밑줄 border-radius 일괄 처리 */
+                  border-radius: 2.5px;
+                }
+                & > div:nth-child(1), div:nth-child(3) { /* 밑줄  */
+                  @include width-height(8vw, 0.4vh);
+                  background-color: $color-4;
+                }
+                & > div:nth-child(2) { /* 밑줄 */
+                  @include width-height(4vw, 0.4vh);
+                  background-color: $color-4;
+                }
+              }
+            }
+          }
+        }
+
+
+
+
+
+
+        & > div:nth-child(2) { /* MacBook의 중앙 오른쪽 하단 묶음 박스, 다른 기기들의 하단 묶음 박스 */
+          @include width-height(80vw, 60vh);
+          position: relative;
+          top: 2vh;
+          & > div:nth-child(1) { /* 겹치는 박스 중 z-index:1 */
+            @include width-height(inherit, 48vh);
+            @include flex-setting(center, center);
+            filter: drop-shadow(6px 12px 24px rgba(0, 0, 0, 0.1));
+            position: relative;
+            z-index: 1;
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div {
+              @include width-height(70vw, 40vh);
+              & > div:nth-child(1) { /* 뉴스 */
+                @include width-height(inherit, 4vh);
+                @include font-size-weight-color($font-size-12, 600, $color-1);
+              }
+              & > div:nth-child(2) { /* 초록색 박스 */
+                @include width-height(inherit, 17vh);
+                @include flex-setting(center, center);
+                @include font-size-weight-color($font-size-48, 400, $color-3);
+                background-color: $color-4;
+                border-radius: 5px;
+                & > div {
+                  @include webkit-clamp-1();
+                }
+              }
+              & > div:nth-child(3) { /* 네모 세 개 묶음 박스 */
+                @include width-height(inherit, 4vh);
+                @include flex-setting(flex-start, center);
+                & > div { /* 네모 세 개 justify-content:space-between 용 */
+                  @include width-height(7vw, 3vh);
+                  @include flex-setting(space-between, center);
+                  & > div { /* 네모 세 개 */
+                    @include width-height(1.9vw, 1.2vh);
+                    background-color: $color-5;
+                  }
+                  & > div:nth-child(1) {
+                    background-color: $color-4;
+                  }
+                }
+              }
+              & > div:nth-child(4) { /* 충격, >, 피그마, 결국 쓸모.. 묶음 상자 */
+                @include width-height(inherit, 5vh);
+                @include flex-setting(flex-start, center);
+                & > div:nth-child(1) { /* 충격 속보 정렬용 */
+                  @include width-height(18vw, 5vh);
+                  @include flex-setting(flex-start, center);
+                  @include font-size-weight-color($font-size-16, 400, $color-1);
+                  & > div {
+                    @include webkit-clamp-1();
+                  }
+                }
+                & > div:nth-child(2) { /* >, 피그마,... 묶음 상자 */
+                  @include width-height(55vw, 5vh);
+                  @include flex-setting(space-between, center);
+                  & > div:nth-child(1) { /* > 중앙 정렬용*/
+                    @include width-height(3vw, 5vh);
+                    @include flex-setting(center, center);
+                    
+                    & > div { /* > */
+                      @include width-height(9px, 9px);
+                      border-top: 4px solid #37A0F4;;
+                      border-right: 4px solid #37A0F4;;
+                      border-radius: 3px;
+                      transform: rotate(45deg);
+                    }
+                  }
+                  & > div:nth-child(2) { /* 피그마, 결국 쓸모.. */
+                    @include flex-setting(center, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                      @include font-size-weight-color($font-size-12, 400, $color-1);
+                      & > span { /* 피그마 */
+                        color: $color-4;
+                      }
+                    }
+                  }
+                }
+                & > div:nth-child(3) { /* invisible - 정렬용 iphone(display:none;) */
+                  @include width-height(10vw, 4vh);
+                  display: none;
+                }
+              }
+              & > div:nth-child(5) { /* lorem */
+                @include width-height(inherit, 10vh);
+                @include font-size-weight-color($font-size-10, 400, $color-1);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+              }
+            }
+          }
+
+
+
+
+          & > div:nth-child(2) { /* 겹치는 박스 중 z-index:2 */
+            @include width-height(inherit, 40vh);
+            @include flex-setting(flex-start, flex-end);
+            position: relative;
+            bottom: 28vh;
+            left: 5vw;
+            background-color: $color-3;
+            border-radius: 5px;
+            & > div { /* 글씨가 보이는 곳, 아래 정렬용 박스 */
+              @include width-height(80vw, 12vh);
+              @include flex-setting(center, center);
+              & > div { /* 전체 중앙 정렬 묶음 박스 */
+                @include width-height(70vw, 10vh);
+                & > div:nth-child(1) { /* 첫 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 첫 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Creators 박스 */
+                    @include width-height(15vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* 크리에이터 박스 */
+                    @include width-height(15vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* 스쿨비지니스 박스 */
+                    @include width-height(15vw, 3vh);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                }
+                & > div:nth-child(2) { /* 두 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 두 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Partners 박스 */
+                    @include width-height(15vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* SME 풀케어 시스템 박스 */
+                    @include width-height(22vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* 비즈니스 박스 */
+                    @include width-height(12vw, 3vh);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(5) { /* 스토어 개설 박스 */
+                    @include width-height(14vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                }
+                & > div:nth-child(3) { /* 세 번째 줄 묶음 박스 */
+                  @include width-height(inherit,3vh);
+                  @include flex-setting(flex-start, flex-start);
+                  @include font-size-weight-color($font-size-8, 400, $color-1);
+                  & > div { /* 세 번째 줄 묶음 박스 전체 글씨 중앙 정렬용 */
+                    @include flex-setting(center, center);
+                  }
+                  & > div:nth-child(1) { /* Developers 박스 */
+                    @include width-height(15vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    @include font-size-weight-color($font-size-12, 600, $color-1);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(2) { /* 초록색 선 박스 */
+                    @include width-height(3vw, 3vh);
+                    & > div { /* 초록색 선 */
+                      @include width-height(0.5vw, 1.5vh);
+                      background-color: $color-4;
+                      border-radius: 10px;
+                    }
+                  }
+                  & > div:nth-child(3) { /* 네이버 개발자 센터 박스 */
+                    @include width-height(22vw, 3vh);
+                    @include flex-setting(flex-start, center);
+                    & > div {
+                      @include webkit-clamp-1();
+                    }
+                  }
+                  & > div:nth-child(4) { /* Open API 박스 */
+                    @include width-height(15vw, 3vh);
+                    @include flex-setting(flex-start, flex-start);
+                    & > div { /* Open API 초록 박스, 중앙 정렬용 */
+                      @include width-height(13vw, 3vh);
+                      @include flex-setting(center, center);
+                      background-color: $color-4;
+                      border-radius: 10.5px;
+                      & > div {
+                        @include webkit-clamp-1();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

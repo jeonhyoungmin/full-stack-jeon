@@ -1,0 +1,86 @@
+$bc-gold: gold;
+$bc-red: red;
+$bc-blue: blue;
+$bc-green: green;
+$bc-white: white;
+// $bd-test: 1px solid black;
+$dp-flex: flex;
+$jc-center: center;
+$ai-center: center;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: $dp-flex;
+  justify-content: $jc-center;
+  align-items: $ai-center;
+  & > div {
+    width: 80vw;
+    height: 70vh;
+    display: $dp-flex;
+    justify-content: $jc-center;
+    align-items: $ai-center;
+    justify-content: space-between;
+    & > div {
+      width: 25vw;
+      height: inherit;
+    }
+  }
+}
+
+body > div > div:nth-child(1) > div {
+  width: inherit;
+  height: 15vh;
+  background-color: $bc-gold;
+}
+body > div > div:nth-child(2){
+  width: 25vw;
+  height: inherit;
+  background-color: $bc-red;
+  display: $dp-flex;
+  justify-content: $jc-center;
+  align-items: $ai-center;
+  & > span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+  }
+}
+
+body > div > div:nth-child(3) {
+  display: $dp-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & > div:nth-child(1) {
+    width: 25vw;
+    height: 10vh;
+    background-color: $bc-blue;
+    position: absolute;
+    top: 21vh;
+    right: 28vw;
+    display: $dp-flex;
+    align-items: $ai-center;
+    justify-content: space-around;
+      & > div {
+        width: 3vw;
+        height: 6vh;
+        background-color: $bc-white;
+      }
+    + div:nth-child(2) {
+    width: 25vw;
+    height: 15vh;
+    background-color: $bc-green;
+    position: relative;
+    top: 55vh;
+  }
+  }
+}
+
+nav {
+  width: 60vw;
+  height: 50vh;
+  border: 5px solid black;
+  position: absolute;
+  z-index: 2;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const domInit = {
+      body: window.document.body,
+      root: document.createElement('div'),
+      sequenceBox: document.createElement('div'),
+      clickButton: document.createElement('button'),
+      sequenceText: document.createElement('div')
+    }
+    const domStyling = {
+      size: (element, width, height) => {
+        element.style.width = width;
+        element.style.height = height;
+      },
+      flex: function(element, justifyContent, alignItems) {
+        element.style.display = 'flex';
+        element.style.justifyContent = justifyContent;
+        element.style.alignItems = alignItems;
+      },
+      position : (element, bottom, left) => {
+        element.style.position = 'absolute';
+        element.style.bottom = bottom;
+        element.style.left = left;
+      }
+    }
+
+    domInit.body.style.margin = 0;
+    domInit.body.style.padding = 0;
+    domInit.body.style.boxSizing = 'border-size';
+
+    domInit.root.id = 'root'
+    domInit.body.append(domInit.root)
+    domStyling.size(domInit.root, '100vw', '100vh');
+    
+    domInit.root.append(domInit.sequenceBox);
+    domStyling.size(domInit.sequenceBox, '100vw', '100vh');
+    domStyling.flex(domInit.sequenceBox, 'center', 'center');
+
+    domInit.clickButton.textContent = 'click!';
+    domInit.sequenceBox.append(domInit.clickButton)
+    domStyling.size(domInit.clickButton, '5vw', '5vw');
+    domInit.clickButton.style.borderRadius = '100%';
+    domInit.clickButton.style.color = 'white';
+    domInit.clickButton.style.backgroundColor = 'black';
+    domInit.clickButton.style.fontSize = '1rem';
+    domInit.clickButton.style.border = 'none';
+
+    domInit.sequenceText.textContent = '#1 Sequence'
+    domInit.sequenceBox.append(domInit.sequenceText)
+    domStyling.position(domInit.sequenceText, '95vh', '90vw');
+    
+    let arrText = ['if all you have a hammer, everything looks like a nail', '가진것이 망치뿐이면, 모든 것이 못으로 보인다.']
+    domInit.clickButton.addEventListener('click', () => {
+      domInit.clickButton.style.display = 'none';
+      domInit.sequenceText.style.display = 'none';
+      let count = 0;
+      let newText = document.createElement('div');
+      let newSequenceText = document.createElement('div')
+      domInit.sequenceBox.append(newText);
+      domInit.sequenceBox.append(newSequenceText);
+      newText.textContent = arrText[count];
+      domStyling.position(newSequenceText, '95vh', '90vw');
+      newSequenceText.textContent = '#' + (count+2) + ' Sequence';
+      newText.addEventListener('click', () => {
+        if(arrText[count+1] !== '' 
+          && arrText[count+1] !== null 
+          && arrText[count+1] !== undefined 
+          && typeof arrText[count+1] !== 'number'){
+          count++;
+          domInit.sequenceBox.append(newSequenceText);
+          newText.textContent = arrText[count];
+          domStyling.position(newSequenceText, '95vh', '90vw');
+          newSequenceText.textContent = '#' + (count+2) + ' Sequence';
+        } else {
+          let newArrText = prompt('추가하실 내용을 입력해주세요', '');
+          if(newArrText !== '' 
+            && newArrText !== null 
+            && newArrText !==undefined 
+            && typeof newArrText !== 'number' 
+            && typeof newArrText === "string"){
+            arrText[count+1] = newArrText;
+          } else {
+            alert('처음으로 돌아갑니다');
+            newText.style.display = 'none';
+            newSequenceText.style.display = 'none';
+            domInit.sequenceBox.append(domInit.clickButton);
+            domStyling.flex(domInit.clickButton, 'center', 'center');
+            domInit.sequenceBox.append(domInit.sequenceText);
+            domInit.sequenceText.style.display = 'flex';
+          }
+        }
+      })
+    })
+  </script>
+</body>
+</html>

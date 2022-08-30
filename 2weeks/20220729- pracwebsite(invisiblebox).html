@@ -1,0 +1,170 @@
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>invisiblebox</title>
+  <!-- media 쿼리 사용해야 함 -->
+
+  <style>
+    /* reset */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    ul {margin: 0; padding: 0; list-style-type: none;}
+
+    /* 레이아웃 테스트 선 */
+    .bd-test {border: 1px solid black;}
+
+    /* flex */
+    .dp-flex {display:flex;}
+    
+    /* flex-wrap 줄바꿈*/
+    .fw-nowrap {flex-wrap: nowrap;}
+    .fw-wrap {flex-wrap: wrap;}
+    .fw-wrap-reverse {flex-wrap: wrap-reverse;}
+
+    /* flex-direction 정렬 방향*/
+    .fd-row {flex-direction: row;}
+    .fd-row-reverse {flex-direction: row-reverse;}
+    .fd-column {flex-direction: column;}
+    .fd-column-reverse {flex-direction: column-reverse;}
+
+    /* justify-content 수평 방향*/
+    .jc-center {justify-content: center;}
+    .jc-right {justify-content: right;}
+    .jc-left {justify-content: left;}
+    .jc-flex-start {justify-content: flex-start;}
+    .jc-flex-end {justify-content: flex-end;}
+    .jc-space-between {justify-content: space-between;}
+    .jc-space-around {justify-content: space-around;}
+
+    /* align-items 수직 방향*/
+    .ai-center {align-items: center;}
+    .ai-flex-start {align-items: flex-start;}
+    .ai-flex-end {align-items: flex-end;}
+    .ai-stretch {align-items: stretch;}
+    .ai-baseline {align-items: baseline;}
+
+    /* 자식 요소가 여러 줄 일때 수직 방향 맞춤 */
+    .ac-stretch {align-content: stretch;}
+    .ac-flex-start {align-content: flex-start;}
+    .ac-flex-end {align-content: flex-end;}
+    .ac-center {align-content: center;}
+    .ac-space-between {align-content: space-between;}
+    .ac-space-around {align-content: space-around;}
+
+    /* 개별 지정 */
+    .as-center {align-self: center;}
+    .as-flex-end {align-self: flex-end;}
+    .as-flex-start {align-self: flex-start;}
+    .js-center {justify-self: center;}
+    .js-flex-end {justify-self: flex-end;}
+    .js-flex-start {justify-self: flex-start;}
+
+    /* grid */
+    .dp-grid {display: grid;}
+    .gt-columns {grid-template-columns: 10;}
+    .gt-rows {grid-template-rows: 10;}
+    .gap- {gap: 10;}
+
+    body > header {
+      width: 100vw;
+    }
+    body > header > nav {
+      width: 90vw;
+      height: 150px;
+    }
+    body > header > nav > div:nth-child(1) {
+      width: inherit;
+      height: 10px;
+    }
+    body > header > nav > div:nth-child(2) {
+      width: inherit;
+      height: 80px;
+    }
+    body > header > nav > div:nth-child(3) {
+      width: inherit;
+      height: 60px;
+    }
+
+    body > aside {
+      width: 10vw;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    }
+    body > aside > nav {
+      width: inherit;
+      height: inherit;
+    }
+
+    body > aside > nav > ul {
+      width: inherit;
+      height: inherit;
+    }
+
+    body > aside > nav > ul > li {
+      width: inherit;
+      height: 5vh;
+    }
+
+    
+
+
+  </style>
+
+
+</head>
+<body>
+  <header class="dp-flex jc-flex-end">
+    <nav class="bd-test">
+      <div class="bd-test"></div>
+      <div class="bd-test"></div>
+      <div class="bd-test"></div>
+    </nav>
+  </header>
+
+
+
+  <aside class="bd-test">
+    <nav class="bd-test">
+      <ul class="bd-test dp-flex fd-column jc-space-around">
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+        <li class="bd-test"></li>
+      </ul>
+    </nav>
+  </aside>
+
+
+
+
+  <main>
+
+  </main>
+
+
+
+
+
+
+
+  <section></section>
+</body>
+</html>

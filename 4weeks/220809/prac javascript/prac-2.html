@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+
+    let root = document.getElementById("root");
+    
+    console.dir(root);
+
+    // 커피콩
+    // 물
+    // 테이크아웃
+    // 우유
+    // 얼음
+    // 만드는 사람의 마음
+
+    let coffenItem = {
+      bean: "커피콩",
+      water: "물",
+      takeout: "테이크아웃잔",
+      milk: "우유",
+      ice: "얼음",
+      maker: "정성"
+    }
+
+    let me = {
+      name: "전형민",
+      like: "play-with-friend",
+      hate: "fighting",
+      favoritMovie: "everything",
+      wish: "trip",
+      now: "coding",
+      favoritnumber: 7
+    }
+
+    function adult($favoritnumber) {
+      if($favoritnumber > 6) {
+        console.log('맞아');
+      } else {
+        console.log('아니야')
+      }
+    }
+
+    adult(me.favoritnumber);
+    
+    
+  </script>
+</body>
+</html>

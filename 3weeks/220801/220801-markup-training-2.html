@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    .bd-test {border: 1px solid pink}
+
+    body > div {
+      width: 100vw;
+      height: 100vh;
+    }
+    body > div > div {
+      width: 960px;
+      height: 600px;
+    }
+    body > div > div > div:nth-child(1), :nth-child(2), :nth-child(3) {
+      width: 320px;
+      height: 600px;
+    }
+    body > div > div > div:nth-child(2) {
+      background-color: rgb(199, 197, 197);
+    }
+    body > div > div > div:nth-child(4) {
+      width: 800px;
+      height: 450px;
+      position: absolute;
+      border: 5px solid black;
+    }
+
+    body > div > div > div:nth-child(1) > div {
+      width: 300px;
+      height: 150px;
+      background-color: grey;
+    }
+    body > div > div > div:nth-child(3) > div:nth-child(1) {
+      width: 300px;
+      height: 100px;
+      background-color: grey;
+      position: relative;
+      right: 200px;
+      top: 30px;
+    }
+    body > div > div > div:nth-child(3) > div:nth-child(2) {
+      width: 300px;
+      height: 150px;
+      background-color: grey;
+      position: absolute;
+      bottom: 185px;
+      right: 220px;
+    }
+    body > div > div > div:nth-child(3) > div {
+      width: 50px;
+      height: 75px;
+    }
+
+
+    .dp-flex {display: flex;}
+    .jc-center {justify-content: center;}
+    .jc-space-between {justify-content: space-between;}
+    .jc-flex-end {justify-content: flex-end;}
+    .ai-center {align-items: center;}
+    .ai-flex-end {align-items: flex-end;}
+    .ac-space-between {align-content: space-between;}
+    .fd-columns {flex-direction: column;}
+  </style>
+</head>
+<body>
+  <div class="dp-flex jc-center ai-center"> <!-- 전체 div -->
+    <div class="dp-flex jc-center ai-center"> <!-- 가운데 div -->
+      <div class=""> <!-- 1번 div -->
+        <div class=""></div> 
+      </div>
+      <div class=""> <!-- 2번 div -->
+
+      </div>
+      <div class=""> <!-- 3번 div -->
+        <div class="dp-flex ai-center">
+          <div class="bd-test"></div>
+          <div class="bd-test"></div>
+          <div class="bd-test"></div>
+          <div class="bd-test"></div>
+          <div class="bd-test"></div>
+        </div>
+        <div class=""></div>
+      </div>
+      <div class=""> <!-- 4번 div -->
+      </div>
+    </div> 
+  </div>
+</body>
+</html>

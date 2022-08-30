@@ -1,0 +1,1229 @@
+$color-1: #2196F3;
+$color-2: #004EA2;
+$color-3: #CDCDCD;
+$color-4: #FFFFFF;
+
+.gc-1-3 {grid-column: 1/3;}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin flex-setting($jc, $ai, $fd:row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+@mixin line {
+  margin-top: 3px;
+  background-color: $color-4;
+  border-radius: 2px;
+}
+@mixin green-deajeon-dunsan($a-self) {
+  color: $color-4;
+  align-self: $a-self;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+ul {margin: 0; padding: 0; list-style-type: circle;}
+
+// 모바일 사이즈
+@media (max-width: 428px) {
+  body {
+    @include size(100vw, 500vh);
+    & > div:nth-child(1) {
+      @include size(100vw, 140vh);
+      & > header {
+        @include size(100vw, 40vh);
+        // 최상단
+        & > div:nth-child(1) {
+          @include size(100vw, 10vh);
+          background-color: $color-1;
+          display: flex;
+          align-items: flex-end;
+          // 최상단의 반쪽 하단
+          & > div {
+            @include size(100vw, 5vh);
+            display: flex;
+            justify-content: space-around;
+            background-color: $color-1;
+            position: relative;
+            bottom: 1vh;
+            // 줄 세개
+            & > div:nth-child(1) {
+              @include size(10vw, 5vh);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-content: flex-start;
+              & > div:nth-child(1) {
+                @include size(5vw, 2px);
+                @include line()
+              }
+              & > div:nth-child(2) {
+                @include size(8vw, 2px);
+                @include line()
+              }
+              & > div:nth-child(3) {
+                @include size(6vw, 2px);
+                @include line()
+              }
+            }
+            // green 대전둔산
+            & > div:nth-child(2) {
+              @include size(40vw, 5vh);
+              @include flex-setting(center, center, column);
+              flex-wrap: wrap;  
+              // green
+              & > div:nth-child(1) {
+                @include green-deajeon-dunsan(flex-end);
+              }
+              // 대전둔산
+              & > div:nth-child(2) {
+                @include green-deajeon-dunsan(flex-start);
+              }
+            }
+
+            // sign in
+            & > div:nth-child(3) {
+              @include size(20vw, 5vh);
+              @include flex-setting(center, center);
+              & > div {
+                @include size(10vw, 3vh);
+                font-size: 0.7rem;
+                background-color: $color-4;
+                color: $color-2;
+                text-align: center;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+
+        // 메뉴
+        & > nav {
+          @include size(100vw, 8vh);
+          @include flex-setting(space-around, center, row);
+          padding-left: 27vw;
+          // <!-- 파란 k-digital training -->
+          & > div:nth-child(1) {
+            @include size(32vw, 5vh);
+            background-color: $color-2;
+            color: $color-4;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 0.7vh;
+            border-radius: 0.8rem;
+          }
+          // <!-- > 화살표 -->
+          & > div:nth-child(2) {
+            @include size(5vw, 5vh);
+            @include flex-setting(center, center);
+            margin-left: 23vw;
+            & > div {
+              @include size(0.3rem, 0.3rem);
+              border-top: 0.1rem solid $color-1;
+              border-right: 0.1rem solid $color-1;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        // 목록
+        & > div:nth-child(3) {
+          @include size(100vw, 20vh);
+          @include flex-setting(flex-end, center);
+          border-top: 0.5vh groove;
+          background-color: $color-3;
+          & > ul {
+            & > li{
+              @include size(70vw, 2.7vh);
+              font-size: 0.4rem;
+              color: $color-2;
+            }
+          }
+        }
+      }
+
+      // kdt 글씨 부분
+      & > div {
+        @include size(100vw, 100vh);
+        @include flex-setting(flex-end, center, column);
+
+
+        // kdt 박스
+        & > div {
+          @include size(90vw, 50vh);
+          & > div {
+            @include size(90vw, 35vh);
+            // 글씨
+            & > div:nth-child(1) {
+              @include size(90vw, 30vh);
+              @include flex-setting(flex-start, flex-end, column);
+              // kdt
+              & > div:nth-child(1) {
+                @include size(90vw, 30vh);
+                font-size: 3.8rem;
+                font-weight: bold;
+                color: $color-1;
+              }
+              // 내용
+              & > div:nth-child(2) {
+                @include size(25vw, 20vh);
+                font-size: 0.5rem;
+                color: $color-1;
+                position: relative;
+                right: 7vw;
+                bottom: 9vh;
+                line-height: 1.9vh;
+              }
+            }
+
+            // 밑줄 세 개
+            // 밑줄 큰 박스
+            & > div:nth-child(2) {
+              @include size(90vw, 5vh);
+              @include flex-setting(flex-end, flex-start);
+              // 배치용 박스
+              & > div {
+                @include size(55vw, 5vh);
+                @include flex-setting(space-around, flex-start);
+                // 밑줄 세 개
+                & > div:nth-child(1) {
+                  @include size(3vw, 0.5vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(2) {
+                  @include size(12vw, 0.5vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(3) {
+                  @include size(27vw, 0.5vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+          }
+        }
+
+
+        // 점점점 있는쪽 글씨
+        & > footer {
+          @include size(70vw, 20vh);
+          & > div:nth-child(1) {
+            @include size(70vw, 2vh);
+            & > ul {
+              @include size(70vw, 2vh);
+              @include flex-setting(center, center, row);
+              & > li {
+                margin-left: 3vw;
+                background-color: $color-3;
+              }
+            }
+          }
+          & > div:nth-child(2) {
+            @include size(70vw, 5vh);
+            font-size: 0.2rem;
+            text-align: center;
+            color: $color-1;
+          }
+        }
+      }
+    }
+
+
+
+
+    // 가운데 파란 배경
+    & > main {
+      @include size(100vw, 150vh);
+      border-radius: 10px;
+      background: linear-gradient(#0073EE, #2196F3);
+      @include flex-setting(flex-start, flex-end);
+      & > div {
+        @include size(100vw, 100vh);
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) {
+          @include size(90vw, 50vh);
+          & > div:nth-child(1) {
+            @include size(90vw, 31vh);
+            @include flex-setting(space-between, flex-start, column);
+            & > div:nth-child(1) {
+              @include size(33vw, 15vh);
+              font-size: 2rem;
+              font-weight: bold;
+              color: $color-4;
+            }
+            & > div:nth-child(2) {
+              @include size(80vw, 15vh);
+              font-size: 0.8rem;
+              color: $color-4;
+            }
+          }
+
+          // 밑줄 부분
+          & > div:nth-child(2) {
+            @include size(90vw, 10vh);
+            @include flex-setting(flex-end, flex-start);
+            margin-top: 2vh;
+            & > div {
+              @include size(85vw, 5vh);
+              border-top: 0.1rem solid $color-4;
+              @include flex-setting(flex-start, flex-start);
+              & > div:nth-child(1) {
+                @include size(31vw, 5vh);
+                font-size: 1rem;
+                font-weight: bold;
+                color: $color-4;
+              }
+              & > div:nth-child(2) {
+                @include size(49vw, 5vh);
+                font-size: 3px;
+                color: $color-4;
+              }
+            }
+          }
+        }
+
+        // grid 사용 부분
+        & > div:nth-child(2) {
+          @include size(90vw, 50vh);
+          & > div:nth-child(1) {
+            @include size(90vw, 5vh);
+            @include flex-setting(center, center);
+            & > div {
+              @include size(0.7rem, 0.7rem);
+              border-top: 0.2rem solid $color-4;
+              border-right: 0.2rem solid $color-4;
+              transform: rotate(45deg);
+            }
+          }
+
+          // grid
+          & > div:nth-child(2) {
+            @include size(90vw, 35vh);
+            position: relative;
+            top: 5vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 5vw;
+            & > div {
+              @include size(15vw, 5vh);
+              font-size: 0.7rem;
+              border-radius: 10px;
+              background-color: $color-4;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+    // 파란 배경 아래
+    & > div:nth-child(3) {
+      @include size(100vw, 140vh);
+      border-radius: 10px;
+      position: relative;
+      bottom: 2vh;
+      @include flex-setting(flex-end, center, column);
+      & > div:nth-child(1) {
+        @include size(90vw, 45vh);
+        & > div {
+          @include size(90vw, 20vh);
+          font-size: 4rem;
+          line-height: 10vh;
+          color: $color-3;
+          font-weight: 600;
+          & > span {
+            color: $color-1;
+          }
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(100vw, 55vh);
+        // 컨테이너
+        & > div {
+          @include size(100vw, 35vh);
+          @include flex-setting(space-around, flex-start);
+          gap: 5vw;
+          // 박스
+          & > div {
+            @include size(45vw, 35vh);
+            background-color: blue;
+            position: relative;
+            left: 10vw;  
+            border-radius: 10px;
+            @include flex-setting(flex-start, flex-end);
+            & > div {
+              @include size(30vw, 40vh);
+              @include flex-setting(center, center, column);
+              & > div:nth-child(1) {
+                @include size(22vw, 6vh);
+                font-size: 1rem;
+                color: $color-4;
+              }
+              & > div:nth-child(2) {
+                @include size(27vw, 10vh);
+                font-size: 0.5rem;
+                color: $color-4;
+                text-align: center;
+              }
+            }
+            & div:nth-child(1) {
+              background-color: #2196F3;
+              border-radius: 10px;
+            }
+            & div:nth-child(2) {
+              background-color: #2196F3CC;
+              border-radius: 10px;
+            }
+            & div:nth-child(3) {
+              background-color: #2196F3;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+    // 최하단
+    & > footer {
+      @include size(100vw, 30vh);
+      & > div:nth-child(1) {
+        @include size(100vw, 15vh);
+        background-color: $color-1;
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) {
+          @include size(90vw, 10vh);
+          @include flex-setting(center, center);
+        }
+        & > div:nth-child(2) {
+          @include size(90vw, 10vh);
+          background-color: greenyellow;
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(100vw, 15vh);
+        background-color: blue;
+        @include flex-setting(center, center, row);
+        & > div:nth-child(1) {
+          @include size(65vw, 15vh);
+          @include flex-setting(space-around, center, row);
+          background-color: green;
+        }
+        & > div:nth-child(2) {
+          @include size(25vw, 15vh);
+          background-color: cadetblue;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 429px) and (max-width:1024px) {
+  body {
+    @include size(100vw, 500vh);
+    & > div:nth-child(1) {
+      @include size(100vw, 140vh);
+      & > header {
+        @include size(100vw, 40vh);
+        // 최상단
+        & > div:nth-child(1) {
+          @include size(100vw, 10vh);
+          background-color: $color-1;
+          display: flex;
+          align-items: flex-end;
+          // 최상단의 반쪽 하단
+          & > div {
+            @include size(100vw, 5vh);
+            display: flex;
+            justify-content: space-around;
+            background-color: $color-1;
+            position: relative;
+            bottom: 1vh;
+            // 줄 세개
+            & > div:nth-child(1) {
+              @include size(10vw, 5vh);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-content: flex-start;
+              & > div:nth-child(1) {
+                @include size(5vw, 2px);
+                @include line()
+              }
+              & > div:nth-child(2) {
+                @include size(8vw, 2px);
+                @include line()
+              }
+              & > div:nth-child(3) {
+                @include size(6vw, 2px);
+                @include line()
+              }
+            }
+            // green 대전둔산
+            & > div:nth-child(2) {
+              @include size(40vw, 5vh);
+              @include flex-setting(center, center, column);
+              flex-wrap: wrap;  
+              // green
+              & > div:nth-child(1) {
+                @include green-deajeon-dunsan(flex-end);
+              }
+              // 대전둔산
+              & > div:nth-child(2) {
+                @include green-deajeon-dunsan(flex-start);
+              }
+            }
+
+            // sign in
+            & > div:nth-child(3) {
+              @include size(20vw, 5vh);
+              @include flex-setting(center, center);
+              & > div {
+                @include size(10vw, 3vh);
+                font-size: 0.7rem;
+                background-color: $color-4;
+                color: $color-2;
+                text-align: center;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+
+        // 메뉴
+        & > nav {
+          @include size(100vw, 8vh);
+          @include flex-setting(space-around, center, row);
+          padding-left: 27vw;
+          // <!-- 파란 k-digital training -->
+          & > div:nth-child(1) {
+            @include size(32vw, 5vh);
+            background-color: $color-2;
+            color: $color-4;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 0.7vh;
+            border-radius: 0.8rem;
+          }
+          // <!-- > 화살표 -->
+          & > div:nth-child(2) {
+            @include size(5vw, 5vh);
+            @include flex-setting(center, center);
+            margin-left: 23vw;
+            & > div {
+              @include size(0.3rem, 0.3rem);
+              border-top: 0.1rem solid $color-1;
+              border-right: 0.1rem solid $color-1;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        // 목록
+        & > div:nth-child(3) {
+          @include size(100vw, 20vh);
+          @include flex-setting(flex-end, center);
+          border-top: 0.5vh groove;
+          background-color: $color-3;
+          & > ul {
+            & > li{
+              @include size(70vw, 2.7vh);
+              font-size: 0.4rem;
+              color: $color-2;
+            }
+          }
+        }
+      }
+
+      // kdt 글씨 부분
+      & > div {
+        @include size(100vw, 100vh);
+        @include flex-setting(flex-end, center, column);
+
+
+        // kdt 박스
+        & > div {
+          @include size(90vw, 50vh);
+          & > div {
+            @include size(90vw, 35vh);
+            // 글씨
+            & > div:nth-child(1) {
+              @include size(90vw, 30vh);
+              @include flex-setting(flex-start, flex-end, column);
+              // kdt
+              & > div:nth-child(1) {
+                @include size(90vw, 30vh);
+                font-size: 3.8rem;
+                font-weight: bold;
+                color: $color-1;
+              }
+              // 내용
+              & > div:nth-child(2) {
+                @include size(25vw, 20vh);
+                font-size: 0.5rem;
+                color: $color-1;
+                position: relative;
+                right: 7vw;
+                bottom: 9vh;
+                line-height: 1.9vh;
+              }
+            }
+
+            // 밑줄 세 개
+            // 밑줄 큰 박스
+            & > div:nth-child(2) {
+              @include size(90vw, 5vh);
+              @include flex-setting(flex-end, flex-start);
+              // 배치용 박스
+              & > div {
+                @include size(55vw, 5vh);
+                @include flex-setting(space-around, flex-start);
+                // 밑줄 세 개
+                & > div:nth-child(1) {
+                  @include size(3vw, 0.5vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(2) {
+                  @include size(12vw, 0.5vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(3) {
+                  @include size(27vw, 0.5vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+          }
+        }
+
+
+        // 점점점 있는쪽 글씨
+        & > footer {
+          @include size(70vw, 20vh);
+          & > div:nth-child(1) {
+            @include size(70vw, 2vh);
+            & > ul {
+              @include size(70vw, 2vh);
+              @include flex-setting(center, center, row);
+              & > li {
+                margin-left: 3vw;
+                background-color: $color-3;
+              }
+            }
+          }
+          & > div:nth-child(2) {
+            @include size(70vw, 5vh);
+            font-size: 0.2rem;
+            text-align: center;
+            color: $color-1;
+          }
+        }
+      }
+    }
+
+
+
+
+    // 가운데 파란 배경
+    & > main {
+      @include size(100vw, 150vh);
+      border-radius: 10px;
+      background: linear-gradient(#0073EE, #2196F3);
+      @include flex-setting(flex-start, flex-end);
+      & > div {
+        @include size(100vw, 100vh);
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) {
+          @include size(90vw, 50vh);
+          & > div:nth-child(1) {
+            @include size(90vw, 31vh);
+            @include flex-setting(space-between, flex-start, column);
+            & > div:nth-child(1) {
+              @include size(33vw, 15vh);
+              font-size: 2rem;
+              font-weight: bold;
+              color: $color-4;
+            }
+            & > div:nth-child(2) {
+              @include size(80vw, 15vh);
+              font-size: 0.8rem;
+              color: $color-4;
+            }
+          }
+
+          // 밑줄 부분
+          & > div:nth-child(2) {
+            @include size(90vw, 10vh);
+            @include flex-setting(flex-end, flex-start);
+            margin-top: 2vh;
+            & > div {
+              @include size(85vw, 5vh);
+              border-top: 0.1rem solid $color-4;
+              @include flex-setting(flex-start, flex-start);
+              & > div:nth-child(1) {
+                @include size(31vw, 5vh);
+                font-size: 1rem;
+                font-weight: bold;
+                color: $color-4;
+              }
+              & > div:nth-child(2) {
+                @include size(49vw, 5vh);
+                font-size: 3px;
+                color: $color-4;
+              }
+            }
+          }
+        }
+
+        // grid 사용 부분
+        & > div:nth-child(2) {
+          @include size(90vw, 50vh);
+          & > div:nth-child(1) {
+            @include size(90vw, 5vh);
+            @include flex-setting(center, center);
+            & > div {
+              @include size(0.7rem, 0.7rem);
+              border-top: 0.2rem solid $color-4;
+              border-right: 0.2rem solid $color-4;
+              transform: rotate(45deg);
+            }
+          }
+
+          // grid
+          & > div:nth-child(2) {
+            @include size(90vw, 35vh);
+            position: relative;
+            top: 5vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 5vw;
+            & > div {
+              @include size(15vw, 5vh);
+              font-size: 0.7rem;
+              border-radius: 10px;
+              background-color: $color-4;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+    // 파란 배경 아래
+    & > div:nth-child(3) {
+      @include size(100vw, 140vh);
+      border-radius: 10px;
+      position: relative;
+      bottom: 2vh;
+      @include flex-setting(flex-end, center, column);
+      & > div:nth-child(1) {
+        @include size(90vw, 45vh);
+        & > div {
+          @include size(90vw, 20vh);
+          font-size: 4rem;
+          line-height: 10vh;
+          color: $color-3;
+          font-weight: 600;
+          & > span {
+            color: $color-1;
+          }
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(100vw, 55vh);
+        // 컨테이너
+        & > div {
+          @include size(100vw, 35vh);
+          @include flex-setting(space-around, flex-start);
+          gap: 5vw;
+          // 박스
+          & > div {
+            @include size(45vw, 35vh);
+            background-color: blue;
+            position: relative;
+            left: 10vw;  
+            border-radius: 10px;
+            @include flex-setting(flex-start, flex-end);
+            & > div {
+              @include size(30vw, 40vh);
+              @include flex-setting(center, center, column);
+              & > div:nth-child(1) {
+                @include size(22vw, 6vh);
+                font-size: 1rem;
+                color: $color-4;
+              }
+              & > div:nth-child(2) {
+                @include size(27vw, 10vh);
+                font-size: 0.5rem;
+                color: $color-4;
+                text-align: center;
+              }
+            }
+            & div:nth-child(1) {
+              background-color: #2196F3;
+              border-radius: 10px;
+            }
+            & div:nth-child(2) {
+              background-color: #2196F3CC;
+              border-radius: 10px;
+            }
+            & div:nth-child(3) {
+              background-color: #2196F3;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+    // 최하단
+    & > footer {
+      @include size(100vw, 30vh);
+      & > div:nth-child(1) {
+        @include size(100vw, 15vh);
+        background-color: $color-1;
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) {
+          @include size(90vw, 10vh);
+          @include flex-setting(center, center);
+        }
+        & > div:nth-child(2) {
+          @include size(90vw, 10vh);
+          background-color: greenyellow;
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(100vw, 15vh);
+        background-color: blue;
+        @include flex-setting(center, center, row);
+        & > div:nth-child(1) {
+          @include size(65vw, 15vh);
+          @include flex-setting(space-around, center, row);
+          background-color: green;
+        }
+        & > div:nth-child(2) {
+          @include size(25vw, 15vh);
+          background-color: cadetblue;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    @include size(100vw, 500vh);
+    & > div:nth-child(1) {
+      @include size(100vw, 140vh);
+      & > header {
+        @include size(100vw, 40vh);
+        // 최상단
+        & > div:nth-child(1) {
+          @include size(100vw, 10vh);
+          background-color: $color-1;
+          display: flex;
+          align-items: flex-end;
+          // 최상단의 반쪽 하단
+          & > div {
+            @include size(100vw, 5vh);
+            display: flex;
+            justify-content: space-around;
+            background-color: $color-1;
+            position: relative;
+            bottom: 1vh;
+            // 줄 세개
+            & > div:nth-child(1) {
+              @include size(10vw, 5vh);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-content: flex-start;
+              & > div:nth-child(1) {
+                @include size(5vw, 2px);
+                @include line()
+              }
+              & > div:nth-child(2) {
+                @include size(8vw, 2px);
+                @include line()
+              }
+              & > div:nth-child(3) {
+                @include size(6vw, 2px);
+                @include line()
+              }
+            }
+            // green 대전둔산
+            & > div:nth-child(2) {
+              @include size(40vw, 5vh);
+              @include flex-setting(center, center, column);
+              flex-wrap: wrap;  
+              // green
+              & > div:nth-child(1) {
+                @include green-deajeon-dunsan(flex-end);
+              }
+              // 대전둔산
+              & > div:nth-child(2) {
+                @include green-deajeon-dunsan(flex-start);
+              }
+            }
+
+            // sign in
+            & > div:nth-child(3) {
+              @include size(20vw, 5vh);
+              @include flex-setting(center, center);
+              & > div {
+                @include size(10vw, 3vh);
+                font-size: 0.7rem;
+                background-color: $color-4;
+                color: $color-2;
+                text-align: center;
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+
+        // 메뉴
+        & > nav {
+          @include size(100vw, 8vh);
+          @include flex-setting(space-around, center, row);
+          padding-left: 27vw;
+          // <!-- 파란 k-digital training -->
+          & > div:nth-child(1) {
+            @include size(32vw, 5vh);
+            background-color: $color-2;
+            color: $color-4;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 0.7vh;
+            border-radius: 0.8rem;
+          }
+          // <!-- > 화살표 -->
+          & > div:nth-child(2) {
+            @include size(5vw, 5vh);
+            @include flex-setting(center, center);
+            margin-left: 23vw;
+            & > div {
+              @include size(0.3rem, 0.3rem);
+              border-top: 0.1rem solid $color-1;
+              border-right: 0.1rem solid $color-1;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        // 목록
+        & > div:nth-child(3) {
+          @include size(100vw, 20vh);
+          @include flex-setting(flex-end, center);
+          border-top: 0.5vh groove;
+          background-color: $color-3;
+          & > ul {
+            & > li{
+              @include size(70vw, 2.7vh);
+              font-size: 0.4rem;
+              color: $color-2;
+            }
+          }
+        }
+      }
+
+      // kdt 글씨 부분
+      & > div {
+        @include size(100vw, 100vh);
+        @include flex-setting(flex-end, center, column);
+
+
+        // kdt 박스
+        & > div {
+          @include size(90vw, 50vh);
+          & > div {
+            @include size(90vw, 35vh);
+            // 글씨
+            & > div:nth-child(1) {
+              @include size(90vw, 30vh);
+              @include flex-setting(flex-start, flex-end, column);
+              // kdt
+              & > div:nth-child(1) {
+                @include size(90vw, 30vh);
+                font-size: 3.8rem;
+                font-weight: bold;
+                color: $color-1;
+              }
+              // 내용
+              & > div:nth-child(2) {
+                @include size(25vw, 20vh);
+                font-size: 0.5rem;
+                color: $color-1;
+                position: relative;
+                right: 7vw;
+                bottom: 9vh;
+                line-height: 1.9vh;
+              }
+            }
+
+            // 밑줄 세 개
+            // 밑줄 큰 박스
+            & > div:nth-child(2) {
+              @include size(90vw, 5vh);
+              @include flex-setting(flex-end, flex-start);
+              // 배치용 박스
+              & > div {
+                @include size(55vw, 5vh);
+                @include flex-setting(space-around, flex-start);
+                // 밑줄 세 개
+                & > div:nth-child(1) {
+                  @include size(3vw, 0.5vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(2) {
+                  @include size(12vw, 0.5vh);
+                  background-color: $color-3;
+                }
+                & > div:nth-child(3) {
+                  @include size(27vw, 0.5vh);
+                  background-color: $color-3;
+                }
+              }
+            }
+          }
+        }
+
+
+        // 점점점 있는쪽 글씨
+        & > footer {
+          @include size(70vw, 20vh);
+          & > div:nth-child(1) {
+            @include size(70vw, 2vh);
+            & > ul {
+              @include size(70vw, 2vh);
+              @include flex-setting(center, center, row);
+              & > li {
+                margin-left: 3vw;
+                background-color: $color-3;
+              }
+            }
+          }
+          & > div:nth-child(2) {
+            @include size(70vw, 5vh);
+            font-size: 0.2rem;
+            text-align: center;
+            color: $color-1;
+          }
+        }
+      }
+    }
+
+
+
+
+    // 가운데 파란 배경
+    & > main {
+      @include size(100vw, 150vh);
+      border-radius: 10px;
+      background: linear-gradient(#0073EE, #2196F3);
+      @include flex-setting(flex-start, flex-end);
+      & > div {
+        @include size(100vw, 100vh);
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) {
+          @include size(90vw, 50vh);
+          & > div:nth-child(1) {
+            @include size(90vw, 31vh);
+            @include flex-setting(space-between, flex-start, column);
+            & > div:nth-child(1) {
+              @include size(33vw, 15vh);
+              font-size: 2rem;
+              font-weight: bold;
+              color: $color-4;
+            }
+            & > div:nth-child(2) {
+              @include size(80vw, 15vh);
+              font-size: 0.8rem;
+              color: $color-4;
+            }
+          }
+
+          // 밑줄 부분
+          & > div:nth-child(2) {
+            @include size(90vw, 10vh);
+            @include flex-setting(flex-end, flex-start);
+            margin-top: 2vh;
+            & > div {
+              @include size(85vw, 5vh);
+              border-top: 0.1rem solid $color-4;
+              @include flex-setting(flex-start, flex-start);
+              & > div:nth-child(1) {
+                @include size(31vw, 5vh);
+                font-size: 1rem;
+                font-weight: bold;
+                color: $color-4;
+              }
+              & > div:nth-child(2) {
+                @include size(49vw, 5vh);
+                font-size: 3px;
+                color: $color-4;
+              }
+            }
+          }
+        }
+
+        // grid 사용 부분
+        & > div:nth-child(2) {
+          @include size(90vw, 50vh);
+          & > div:nth-child(1) {
+            @include size(90vw, 5vh);
+            @include flex-setting(center, center);
+            & > div {
+              @include size(0.7rem, 0.7rem);
+              border-top: 0.2rem solid $color-4;
+              border-right: 0.2rem solid $color-4;
+              transform: rotate(45deg);
+            }
+          }
+
+          // grid
+          & > div:nth-child(2) {
+            @include size(90vw, 35vh);
+            position: relative;
+            top: 5vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 5vw;
+            & > div {
+              @include size(15vw, 5vh);
+              font-size: 0.7rem;
+              border-radius: 10px;
+              background-color: $color-4;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+    // 파란 배경 아래
+    & > div:nth-child(3) {
+      @include size(100vw, 140vh);
+      border-radius: 10px;
+      position: relative;
+      bottom: 2vh;
+      @include flex-setting(flex-end, center, column);
+      & > div:nth-child(1) {
+        @include size(90vw, 45vh);
+        & > div {
+          @include size(90vw, 20vh);
+          font-size: 4rem;
+          line-height: 10vh;
+          color: $color-3;
+          font-weight: 600;
+          & > span {
+            color: $color-1;
+          }
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(100vw, 55vh);
+        // 컨테이너
+        & > div {
+          @include size(100vw, 35vh);
+          @include flex-setting(space-around, flex-start);
+          gap: 5vw;
+          // 박스
+          & > div {
+            @include size(45vw, 35vh);
+            background-color: blue;
+            position: relative;
+            left: 10vw;  
+            border-radius: 10px;
+            @include flex-setting(flex-start, flex-end);
+            & > div {
+              @include size(30vw, 40vh);
+              @include flex-setting(center, center, column);
+              & > div:nth-child(1) {
+                @include size(22vw, 6vh);
+                font-size: 1rem;
+                color: $color-4;
+              }
+              & > div:nth-child(2) {
+                @include size(27vw, 10vh);
+                font-size: 0.5rem;
+                color: $color-4;
+                text-align: center;
+              }
+            }
+            & div:nth-child(1) {
+              background-color: #2196F3;
+              border-radius: 10px;
+            }
+            & div:nth-child(2) {
+              background-color: #2196F3CC;
+              border-radius: 10px;
+            }
+            & div:nth-child(3) {
+              background-color: #2196F3;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+    // 최하단
+    & > footer {
+      @include size(100vw, 30vh);
+      & > div:nth-child(1) {
+        @include size(100vw, 15vh);
+        background-color: $color-1;
+        @include flex-setting(center, center, column);
+        & > div:nth-child(1) {
+          @include size(90vw, 10vh);
+          @include flex-setting(center, center);
+        }
+        & > div:nth-child(2) {
+          @include size(90vw, 10vh);
+          background-color: greenyellow;
+        }
+      }
+      & > div:nth-child(2) {
+        @include size(100vw, 15vh);
+        background-color: blue;
+        @include flex-setting(center, center, row);
+        & > div:nth-child(1) {
+          @include size(65vw, 15vh);
+          @include flex-setting(space-around, center, row);
+          background-color: green;
+        }
+        & > div:nth-child(2) {
+          @include size(25vw, 15vh);
+          background-color: cadetblue;
+        }
+      }
+    }
+  }
+}

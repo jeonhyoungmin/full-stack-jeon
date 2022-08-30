@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Uchen", serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body > div {
+  width: 100vw;
+  height: 100vh;
+}
+
+body > div > main {
+  width: 100vw;
+  height: 80vh;
+  background-image: url("https://www.rappick.com/wp-content/uploads/2022/07/hip-hops-clout-era-revisiting-soundcloud-raps-antics-driven-phase-stereogum.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+body > div > main > div {
+  width: 25vw;
+  height: 30vh;
+  position: relative;
+  top: 30vh;
+  left: 15vw;
+  border-radius: 10px;
+}
+body > div > main > div > div:nth-child(1) {
+  color: red;
+  font-size: 50px;
+}
+body > div > main > div > div:nth-child(2) {
+  color: pink;
+}
+body > div > main > div > div:nth-child(3) {
+  color: rgb(248, 95, 197);
+  font-size: 10px;
+}
+body > div > main > header {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body > div > main > header > div {
+  width: 80vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+}
+body > div > main > header > div > div:nth-child(1) {
+  width: 5vw;
+  height: 3vh;
+  color: white;
+}
+body > div > main > header > div > div:nth-child(2) {
+  width: 15vw;
+  height: 7vh;
+  font-size: 60px;
+  color: white;
+  position: relative;
+  bottom: 2vh;
+}
+body > div > main > header > div > div:nth-child(3) {
+  width: 7vw;
+  height: 3vh;
+  color: white;
+  justify-self: flex-start;
+}
+body > div > main > header > nav {
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+body > div > main > header > nav > div {
+  width: 5vw;
+  height: 3vh;
+  color: white;
+}
+
+body > div > section {
+  margin-top: 10vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-direction: column;
+}
+body > div > section > div:nth-child(1) {
+  width: 70vw;
+  height: 10vh;
+  display: flex;
+  align-items: flex-end;
+}
+body > div > section > div:nth-child(1) > div {
+  width: 50vw;
+  height: 6vh;
+  font-size: 40px;
+  position: relative;
+  bottom: 2vh;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+body > div > section > div:nth-child(2) {
+  width: 70vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body > div > section > div:nth-child(2) > div:nth-child(2) {
+  width: 10vw;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body > div > section > div:nth-child(2) > div:nth-child(2) > div {
+  background-color: black;
+  width: 0.1vw;
+  height: 70vh;
+}
+body > div > section > div:nth-child(2) > div:nth-child(1), body > div > section > div:nth-child(2) div:nth-child(3) {
+  width: 30vw;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body > div > section > div:nth-child(2) > div:nth-child(1) > div, body > div > section > div:nth-child(2) div:nth-child(3) > div {
+  width: inherit;
+  height: 40vh;
+}
+
+body > div > footer {
+  margin-top: 25vh;
+  margin-bottom: 10vh;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body > div > footer > div {
+  width: 80vw;
+  height: 70vh;
+  background-color: red;
+}
+
+body > div > aside {
+  width: 100vw;
+  height: 100vh;
+  background-color: burlywood;
+}
+body > div > aside > div:nth-child(1) {
+  width: 100vw;
+  height: 50vh;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(1) {
+  position: absolute;
+  left: 4vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(2) {
+  position: absolute;
+  left: 14vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(3) {
+  position: absolute;
+  left: 24vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(4) {
+  position: absolute;
+  left: 34vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(5) {
+  position: absolute;
+  left: 44vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(6) {
+  position: absolute;
+  left: 54vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}
+body > div > aside > div:nth-child(1) > div:nth-child(7) {
+  position: absolute;
+  left: 64vw;
+  background-color: blue;
+  width: 30vw;
+  height: 45vh;
+  z-index: 1;
+}/*# sourceMappingURL=magazine.css.map */

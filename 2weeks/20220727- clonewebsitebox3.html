@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    * {margin: 0; height: 0; box-sizing: border-box;}
+    body > div {
+      width: 100vw;
+      min-height: 100vh;
+    }
+    
+    /* 3등분 레이아웃 */
+    body > div > header {width: inherit; height: 20vh;}
+    body > div > main {width: inherit; height: 70vh;}
+    body > div > footer {width: inherit; height: 10vh;}
+
+    /* 윤각선 */
+    .border-test {border: 1px solid #333}
+
+    /* 상속 */
+    .inherit-width {width: inherit;}
+    .inherit-height {height: inherit;}
+
+    /* display */
+    .dp-block {display: block;}
+    .dp-inline-block {display: inline-block;}
+    .dp-inline {display: inline;}
+    .dp-flex {display: flex;}
+
+    </style>
+</head>
+<body>
+  <div>
+    <!-- 입체 박스 -->
+      <header class="border-test">
+        <div class="border-test" style="width:inherit; height:5vh;"></div>
+        <nav class="border-test dp-flex" style="width:inherit; height:10vh;">
+          <div class="border-test inherit-height dp-inline-block" style="width: 5vw;"></div>
+          <div class="border-test inherit-height dp-inline-block" style="width: 10vw;"></div>
+          <div class="border-test inherit-height dp-inline-block" style="width: 25vw;"></div>
+          <div class="border-test inherit-height dp-inline-block" style="width: 20vw;"></div>
+          <div class="border-test inherit-height dp-inline-block" style="width: 30vw;"></div>
+          <div class="border-test inherit-height dp-inline-block" style="width: 10vw;"></div>
+        </nav>
+      </header>
+      <main class="border-test dp-flex">
+        <asid class="border-test inherit-height dp-inline-block" style="width: 15vw;"></asid>
+        <section class="border-test inherit-height dp-inline-block" style="width: 85vw;">
+          <div class="border-test inherit-width dp-block" style="height: 12vh;"></div>
+          <div class="border-test inherit-width dp-block dp-flex" style="height: 20vh;">
+            <div class="border-test inherit-height" style="width: 35vw;"></div>
+            <div class="border-test inherit-height" style="width: 50vw;"></div>
+          </div>
+          <div class="border-test inherit-width dp-block dp-flex" style="height: 15vh;">
+            <div class="border-test inherit-height" style="width: 30vw;"></div>
+            <div class="border-test inherit-height" style="width: 55vw;"></div>
+          </div>
+          <div class="border-test inherit-width dp-block" style="height: 12vh;"></div>
+          <div class="border-test inherit-width dp-block" style="height: 11vh;"></div>
+        </section>
+      </main>
+      <footer class="border-test"></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {box-sizing: border-box;}
+
+    body > div {
+      width: 80vw;
+      height: 80vh;
+    }
+
+    body > div > div {
+      width: 35vw;
+      height: 35vh;
+    }
+
+    .box2-1 {
+      width: 10vw;
+      height: 30vh;
+    }
+
+    .box2-2 {
+      width: 20vw;
+      height: 30vh;
+    }
+
+    .box2-2-1 {
+      width: 20vw;
+      height: 14vh;
+    }
+
+    .box2-2-1-1 {
+      width: 9vw;
+      height: 14vh;
+    }
+
+    .box3-1 {
+      width: 17vw;
+      height: 17vh;
+    }
+    
+    .dp-flex {display: flex;}
+    .fd-row {flex-direction: row;}
+    .fd-column {flex-direction: column;}
+    .jc-center {justify-content: center;}
+    .ai-center {align-items: center;}
+    .fw-wrap {flex-wrap: wrap;}
+    .jc-space-around {justify-content: space-around;}
+    .jc-space-between {justify-content: space-between;}
+    .ai-space-around {align-items: space-around;}
+    .ac-space-around {align-content: space-around;}
+    .dp-grid {display: grid;}
+    .gt-columns {grid-template-columns: 1fr 1fr;}
+    .gt-rows {grid-template-rows: repeat(auto-fit, 1fr 1fr);}
+
+    .bd-test {border: 1px solid black;}
+    .bg-color {background-color: grey;}
+  </style>
+</head>
+<body>
+  <div class="bd-test dp-flex fw-wrap jc-center ai-center jc-space-around">
+    <div class="dp-flex jc-center ai-center" style="border: 1px solid red;">달걀</div>
+    <div class="bd-test dp-flex fd-row jc-space-around ai-center" style="border: 1px solid blue">
+      <div class="box2-1 bg-color dp-flex jc-center ai-center">소스</div>
+      <div class="box2-2 dp-flex fd-column jc-space-between">
+        <div class="box2-2-1 dp-flex fd-row jc-space-between">
+          <div class="box2-2-1-1 bg-color"></div>
+          <div class="box2-2-1-1 bg-color"></div>
+        </div>
+        <div class="box2-2-1 bg-color"></div>
+      </div>
+    </div>
+    <div class="dp-grid gt-columns">
+      <div class="box3-1 bg-color"></div>
+      <div class="box3-1 bg-color"></div>
+      <div class="box3-1 bg-color"></div>
+      <div class="box3-1 bg-color"></div>
+    </div>
+    <div class="bd-test" style="border: 1px solid green"></div>
+  </div>
+</body>
+</html>
