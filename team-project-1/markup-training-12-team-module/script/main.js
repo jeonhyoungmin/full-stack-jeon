@@ -57,6 +57,7 @@ function pokemonApiImport(Keys, count){
     // console.log(_POKEMON_API.results);
     for(let i = 0; i< count; i++){
       let pokemonData = _POKEMON_API.results[i].name
+      
     }
   })
 }
