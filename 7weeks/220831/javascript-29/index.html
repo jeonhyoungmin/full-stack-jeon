@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    function elem(tagName){
+      if(typeof(tagName) === "string"){
+        return `<${tagName}></${tagName}>`;
+      }
+    }
+    
+    const root = document.getElementById('root');
+    root.innerHTML = `
+      ${elem("header")}
+      ${elem("main")}
+      ${elem("footer")}
+    `;
+    // elem()함수는 문자열이고, innerHTML은 문자열을 태그로 탈바꿈 시킨다.
+  </script>
+</body>
+</html>
