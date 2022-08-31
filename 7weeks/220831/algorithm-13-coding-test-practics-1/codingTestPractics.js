@@ -100,4 +100,4 @@ for(let i=0; i<newArr.length;i++){
 // console.log(newArr)
 // console.log(newArr[2])
 
-console.log(Math.max.apply(newArr))
+// console.log(Math.max.apply(newArr))
