@@ -6,8 +6,8 @@ const docInit = {
   slideContainer: document.createElement('div'),
   leftDiv: document.createElement('div'),
   rightDiv: document.createElement('div'),
-
-
+  
+  
   // 카드 div ==> for문으로 제작하기
   cardDiv: document.createElement('div'),
   // cardDivOne: document.createElement('div'),
