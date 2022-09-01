@@ -4,36 +4,6 @@ import cardSlide from "./cardSlide.js"
 import pokemonApiList from "./pokemonApiList.js"
 
 
-// const docInit = {
-//   body: document.body,
-//   root: document.getElementById('root'),
-//   centerDiv: document.createElement('div'),
-//   arrowDiv: document.createElement('div'),
-//   slideContainer: document.createElement('div'),
-//   leftDiv: document.createElement('div'),
-//   rightDiv: document.createElement('div'),
-
-
-//   // 카드 div ==> for문으로 제작하기
-//   cardDiv: document.createElement('div'),
-//   // cardDivOne: document.createElement('div'),
-//   // cardDivTwo: document.createElement('div'),
-//   // cardDivThree: document.createElement('div'),
-//   // cardDivFour: document.createElement('div'),
-//   // cardDivFive: document.createElement('div'),
-//   // cardDivSix: document.createElement('div'),
-
-//   // 단일 카드 내부 div들
-//   // 카드 위 이미지 부분
-//   cardTopDiv: document.createElement('div'),
-//   numberDiv: document.createElement('div'),
-//   // 카드 아래 텍스트 부분
-//   cardBottomDiv: document.createElement('div'),
-//   pokemonDivBox: document.createElement('div'),
-//   pokemonDiv: document.createElement('div'),
-//   textDiv: document.createElement('div'),
-//   underLineDiv: document.createElement('div')
-// }
 
 domStyling.size(docInit.root, '100vw', '100vh');
 domStyling.bgColor(docInit.root, '');
@@ -67,10 +37,34 @@ domStyling.flexSetting(docInit.slideContainer, 'flex', 'flex-start', 'flex-start
 
 
 
+
+const pokemonName = [];
+
+const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=898/`;
+const request = new XMLHttpRequest();
+request.open("GET", _BASIC_URL);
+request.responseType = "json";
+request.send();
+request.addEventListener('load', () => {
+  const _POKEMON_API = request.response;
+  console.log(_POKEMON_API.results)
+  const pokemonApiName = _POKEMON_API.results
+  console.log(pokemonApiName[0].name)
+  pokemonName.push(pokemonApiName.forEach(element => {
+    
+  }))
+})
+// 이름 가져오기
+// pokemon?limit=905 주소를 통해 898개의 데이터를 찾음
+// pokemonApiName은 898개의 요소를 가지고 있는 배열이다. 그리고 안에는 객체
+// 
+
+
+
+
+
 // const pokemonName = [];
 
-// // 단일 카드 내부 div
-// // 카드 이미지 부분
 // function pokemonApiImport(Keys, count, pokemonName){
 //   const _BASIC_URL = `https://pokeapi.co/api/v2/${Keys}?limit=${count}/`;
 //   const request = new XMLHttpRequest();
@@ -85,106 +79,100 @@ domStyling.flexSetting(docInit.slideContainer, 'flex', 'flex-start', 'flex-start
 //     for(let i = 0; i< count; i++){
 //       pokemonName[i] = _POKEMON_API.results[i].name
 //     }
-//     console.log(pokemonName)
+//     console.log(_POKEMON_API.results.name)
 //   })
 // }
 // pokemonApiImport(pokemonApiList.pokemon, 898, pokemonName)
-// console.log(pokemonName)
 
 
 
-const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
-const request = new XMLHttpRequest();
-request.open("GET", _BASIC_URL);
-request.responseType = "json";
-request.send();
-request.addEventListener('load', () => {
-  const _POKEMON_API = request.response;
-  // console.log(_POKEMON_API);
-  // console.log(_POKEMON_API.results);
-  // console.log(_POKEMON_API.results.length);
-  const pokemonList = _POKEMON_API.results;
-  // console.log(pokemonList);
+// const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
+// const request = new XMLHttpRequest();
+// request.open("GET", _BASIC_URL);
+// request.responseType = "json";
+// request.send();
+// request.addEventListener('load', () => {
+//   const _POKEMON_API = request.response;
+//   // console.log(_POKEMON_API);
+//   // console.log(_POKEMON_API.results);
+//   // console.log(_POKEMON_API.results.length);
+//   const pokemonList = _POKEMON_API.results;
+//   // console.log(pokemonList);
 
-  const cardDivArr = []
-  for (let i = 0; i < 898; i++) {
-    let cardDiv = document.createElement('div');
-    // 단일 카드 내부 div들
-    // 카드 위 이미지 부분
-    let cardTopDiv = document.createElement('div');
-    let numberDiv = document.createElement('div');
-    // 카드 아래 텍스트 부분
-    let cardBottomDiv = document.createElement('div');
-    let pokemonDivBox = document.createElement('div');
-    let pokemonDiv = document.createElement('div');
-    let textDiv = document.createElement('div');
-    let underLineDiv = document.createElement('div');
-    let textAlignDiv = document.createElement('div');
-    docInit.slideContainer.append(cardDiv)
-    cardDiv.style.width = '10vw';
-    cardDiv.style.height = '40vh';
-    cardDiv.id = `card${i}`
-    cardDivArr[i] = cardDiv
-    // cardDiv.style.backgroundColor = 'green';
+//   const cardDivArr = []
+//   for (let i = 0; i < 898; i++) {
+//     let cardDiv = document.createElement('div');
+//     // 단일 카드 내부 div들
+//     // 카드 위 이미지 부분
+//     let cardTopDiv = document.createElement('div');
+//     let numberDiv = document.createElement('div');
+//     // 카드 아래 텍스트 부분
+//     let cardBottomDiv = document.createElement('div');
+//     let pokemonDivBox = document.createElement('div');
+//     let pokemonDiv = document.createElement('div');
+//     let textDiv = document.createElement('div');
+//     let underLineDiv = document.createElement('div');
+//     let textAlignDiv = document.createElement('div');
+//     docInit.slideContainer.append(cardDiv)
+//     cardDiv.style.width = '10vw';
+//     cardDiv.style.height = '40vh';
+//     cardDiv.id = `card${i}`
+//     cardDivArr[i] = cardDiv
+//     // cardDiv.style.backgroundColor = 'green';
 
-    cardDiv.append(cardTopDiv)
-    domStyling.size(cardTopDiv, '10vw', '20vh')
-
-
-
-
-    cardTopDiv.style.backgroundImage = `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png)`
-    cardTopDiv.style.backgroundSize = '10vw 20vh'
-
-    // domStyling.bgColor(cardTopDiv,  `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`)
-    domStyling.flexSetting(cardTopDiv, 'flex', 'flex-start', 'flex-end')
-    cardTopDiv.append(numberDiv);
-    // domStyling.size(numberDiv, '3vw', '3vh')
-    numberDiv.textContent = 'No.' + (i + 1)
-    // numberDiv.style.textAlign = 'center'
-    domStyling.bgColor(numberDiv, '')
-    // 카드 텍스트 부분
-    cardDiv.append(cardBottomDiv)
-    domStyling.size(cardBottomDiv, '10vw', '20vh');
-    // domStyling.bgColor(cardBottomDiv, 'white')
-    // 포켓몬 텍스트 부분
-    cardBottomDiv.append(pokemonDivBox)
-    domStyling.size(pokemonDivBox, '10vw', '5vh');
-    domStyling.bgColor(pokemonDivBox, '');
-    domStyling.flexSetting(pokemonDivBox, 'flex', 'center', 'center');
-    pokemonDivBox.append(pokemonDiv);
-    domStyling.size(pokemonDiv, '3vw', '3vh');
-    domStyling.bgColor(pokemonDiv, '');
-    pokemonDiv.textContent = pokemonList[i].name;
-    domStyling.flexWebkit(pokemonDiv)
-    domStyling.pokemonFontSize(pokemonDiv, '0.8rem', '100', 'black')
-    pokemonDiv.append(underLineDiv);
-    domStyling.size(underLineDiv, '2vw', '0.5vh');
-    underLineDiv.style.backgroundColor = `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`;
-    pokemonDiv.style.flexDirection = 'column'
-    domStyling.flexSetting(pokemonDiv, 'flex', 'space-between', 'center')
-    // lorem 텍스트 부분
-    cardBottomDiv.append(textDiv);
-    domStyling.size(textDiv, '10vw', '15vh');
-    domStyling.textFontSize(textDiv, '1rem', '10', 'black')
-    // domStyling.bgColor(textDiv, 'blue');
-    textDiv.append(textAlignDiv)
-    textAlignDiv.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iusto, atque incidunt accusamus ut quasi consequatur tenetur dolorem dolore corporis minima quo esse beatae ipsum. Rerum omnis neque dolorem et!'
-    // textAlignDiv.style.textAlign = 'justify'
-    // textAlignDiv.style.lineHeight = '25px'
-    domStyling.flexWebkit(textDiv)
-  }
+//     cardDiv.append(cardTopDiv)
+//     domStyling.size(cardTopDiv, '10vw', '20vh')
 
 
 
 
+//     cardTopDiv.style.backgroundImage = `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png)`
+//     cardTopDiv.style.backgroundSize = '10vw 20vh'
+
+//     // domStyling.bgColor(cardTopDiv,  `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`)
+//     domStyling.flexSetting(cardTopDiv, 'flex', 'flex-start', 'flex-end')
+//     cardTopDiv.append(numberDiv);
+//     // domStyling.size(numberDiv, '3vw', '3vh')
+//     numberDiv.textContent = 'No.' + (i + 1)
+//     // numberDiv.style.textAlign = 'center'
+//     domStyling.bgColor(numberDiv, '')
+//     // 카드 텍스트 부분
+//     cardDiv.append(cardBottomDiv)
+//     domStyling.size(cardBottomDiv, '10vw', '20vh');
+//     // domStyling.bgColor(cardBottomDiv, 'white')
+//     // 포켓몬 텍스트 부분
+//     cardBottomDiv.append(pokemonDivBox)
+//     domStyling.size(pokemonDivBox, '10vw', '5vh');
+//     domStyling.bgColor(pokemonDivBox, '');
+//     domStyling.flexSetting(pokemonDivBox, 'flex', 'center', 'center');
+//     pokemonDivBox.append(pokemonDiv);
+//     domStyling.size(pokemonDiv, '3vw', '3vh');
+//     domStyling.bgColor(pokemonDiv, '');
+//     pokemonDiv.textContent = pokemonList[i].name;
+//     domStyling.flexWebkit(pokemonDiv)
+//     domStyling.pokemonFontSize(pokemonDiv, '0.8rem', '100', 'black')
+//     pokemonDiv.append(underLineDiv);
+//     domStyling.size(underLineDiv, '2vw', '0.5vh');
+//     underLineDiv.style.backgroundColor = `rgb( ${new Array(3).fill().map(parameter => Math.random() * 255).join(", ")} )`;
+//     pokemonDiv.style.flexDirection = 'column'
+//     domStyling.flexSetting(pokemonDiv, 'flex', 'space-between', 'center')
+//     // lorem 텍스트 부분
+//     cardBottomDiv.append(textDiv);
+//     domStyling.size(textDiv, '10vw', '15vh');
+//     domStyling.textFontSize(textDiv, '1rem', '10', 'black')
+//     // domStyling.bgColor(textDiv, 'blue');
+//     textDiv.append(textAlignDiv)
+//     textAlignDiv.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias iusto, atque incidunt accusamus ut quasi consequatur tenetur dolorem dolore corporis minima quo esse beatae ipsum. Rerum omnis neque dolorem et!'
+//     // textAlignDiv.style.textAlign = 'justify'
+//     // textAlignDiv.style.lineHeight = '25px'
+//     domStyling.flexWebkit(textDiv)
+//   }
 
 
 
+//   // 카드 슬라이드
+//   docInit.centerDiv.style.overflow = 'hidden'
 
-  // 카드 슬라이드
-  docInit.centerDiv.style.overflow = 'hidden'
+//   cardSlide(cardDivArr, docInit.slideContainer, docInit.rightDiv, docInit.leftDiv);
 
-  cardSlide(cardDivArr, docInit.slideContainer, docInit.rightDiv, docInit.leftDiv);
-
-});
+// });
