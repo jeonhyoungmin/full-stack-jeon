@@ -1,7 +1,4 @@
 export default function cardSlide(Array, container, rightButton, leftButton ){
-
-
-
   let count = 1;
   const size = Array[0].clientWidth
 
@@ -17,10 +14,6 @@ export default function cardSlide(Array, container, rightButton, leftButton ){
     count--;
     container.style.transform = "translateX(" + (-size*count) + "px)";
   })
-
-
-
-
 }
 
 
