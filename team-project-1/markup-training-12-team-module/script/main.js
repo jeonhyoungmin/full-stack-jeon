@@ -38,28 +38,22 @@ domStyling.flexSetting(docInit.slideContainer, 'flex', 'flex-start', 'flex-start
 
 
 
-const pokemonName = [];
 
-const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=898/`;
-const request = new XMLHttpRequest();
-request.open("GET", _BASIC_URL);
-request.responseType = "json";
-request.send();
-request.addEventListener('load', () => {
-  const _POKEMON_API = request.response;
-  console.log(_POKEMON_API.results)
-  const pokemonApiName = _POKEMON_API.results
-  console.log(pokemonApiName[0].name)
-  pokemonName.push(pokemonApiName.forEach(element => {
-    
-  }))
-})
-// 이름 가져오기
-// pokemon?limit=905 주소를 통해 898개의 데이터를 찾음
-// pokemonApiName은 898개의 요소를 가지고 있는 배열이다. 그리고 안에는 객체
-// 
+function pokemonAllApi(){
 
-
+  const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=898/`;
+  const request = new XMLHttpRequest();
+  request.open("GET", _BASIC_URL);
+  request.responseType = "json";
+  request.send();
+  let pokemonApiName
+  request.addEventListener('load', () => {
+    const _POKEMON_API = request.response;
+    console.log(_POKEMON_API.results)
+    console.log('load!')
+    return pokemonApiName = _POKEMON_API.results
+  })
+}
 
 
 
